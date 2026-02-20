@@ -2,95 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 33% 9%;
+    --foreground: 210 40% 80%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 28% 12%;
+    --card-foreground: 210 40% 80%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 28% 12%;
+    --popover-foreground: 210 40% 80%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 166 100% 70%;
+    --primary-foreground: 220 33% 9%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 24% 16%;
+    --secondary-foreground: 210 40% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 24% 16%;
+    --muted-foreground: 210 20% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 166 100% 70%;
+    --accent-foreground: 220 33% 9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 166 100% 70%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom tokens */
+    --navy: 220 33% 9%;
+    --navy-light: 220 28% 12%;
+    --navy-lighter: 220 24% 16%;
+    --slate: 210 20% 50%;
+    --slate-light: 210 30% 65%;
+    --slate-lightest: 210 40% 80%;
+    --teal: 166 100% 70%;
+    --white: 0 0% 100%;
   }
 }
 
@@ -99,7 +51,107 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Calibre', 'San Francisco', 'SF Pro Text', system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--navy-lighter));
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-teal {
+    color: hsl(var(--teal));
+  }
+  .text-slate {
+    color: hsl(var(--slate));
+  }
+  .text-slate-light {
+    color: hsl(var(--slate-light));
+  }
+  .text-slate-lightest {
+    color: hsl(var(--slate-lightest));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+  .bg-navy-lighter {
+    background-color: hsl(var(--navy-lighter));
+  }
+  .border-navy-lighter {
+    border-color: hsl(var(--navy-lighter));
+  }
+  .border-teal {
+    border-color: hsl(var(--teal));
+  }
+
+  .section-heading {
+    @apply text-sm font-bold tracking-widest uppercase text-slate mb-8;
+  }
+
+  .nav-link {
+    @apply relative text-xs font-bold tracking-widest uppercase text-slate transition-all duration-200;
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--slate-lightest));
+  }
+
+  .nav-link.active {
+    color: hsl(var(--slate-lightest));
+  }
+
+  .nav-link::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 h-px transition-all duration-200;
+    background-color: hsl(var(--slate-lightest));
+    width: 0;
+    left: -24px;
+  }
+
+  .nav-link.active::before,
+  .nav-link:hover::before {
+    width: 40px;
+  }
+
+  .experience-card {
+    @apply relative rounded-sm p-6 transition-all duration-200 cursor-default;
+  }
+
+  .experience-card:hover {
+    background-color: hsl(var(--navy-lighter) / 0.5);
+    box-shadow: inset 0 1px 0 0 hsl(var(--teal) / 0.1);
+  }
+
+  .skill-pill {
+    @apply rounded-full px-3 py-1 text-xs font-medium;
+    background-color: hsl(var(--teal) / 0.1);
+    color: hsl(var(--teal));
+  }
+
+  .social-link {
+    @apply transition-all duration-200;
+    color: hsl(var(--slate));
+  }
+
+  .social-link:hover {
+    color: hsl(var(--slate-lightest));
+    transform: translateY(-2px);
   }
 }
