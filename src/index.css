@@ -4,68 +4,83 @@
 
 @layer base {
   :root {
-    --background: 220 33% 9%;
-    --foreground: 210 40% 80%;
+    /* === Core palette === */
+    --navy:        220 43% 11%;
+    --navy-light:  222 41% 14%;
+    --navy-lighter:220 30% 18%;
+    --slate:       218 17% 54%;
+    --slate-light: 218 22% 67%;
+    --slate-lightest: 218 27% 84%;
+    --white:       0 0% 100%;
+    --teal:        166 100% 70%;
 
-    --card: 220 28% 12%;
-    --card-foreground: 210 40% 80%;
+    /* === Design tokens === */
+    --background: var(--navy);
+    --foreground: var(--slate-lightest);
 
-    --popover: 220 28% 12%;
-    --popover-foreground: 210 40% 80%;
+    --card: var(--navy-light);
+    --card-foreground: var(--slate-lightest);
 
-    --primary: 166 100% 70%;
-    --primary-foreground: 220 33% 9%;
+    --popover: var(--navy-light);
+    --popover-foreground: var(--slate-lightest);
 
-    --secondary: 220 24% 16%;
-    --secondary-foreground: 210 40% 80%;
+    --primary: var(--teal);
+    --primary-foreground: var(--navy);
 
-    --muted: 220 24% 16%;
-    --muted-foreground: 210 20% 50%;
+    --secondary: var(--navy-lighter);
+    --secondary-foreground: var(--slate-lightest);
 
-    --accent: 166 100% 70%;
-    --accent-foreground: 220 33% 9%;
+    --muted: var(--navy-lighter);
+    --muted-foreground: var(--slate);
+
+    --accent: var(--teal);
+    --accent-foreground: var(--navy);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 166 100% 70%;
-
+    --border: var(--navy-lighter);
+    --input: var(--navy-lighter);
+    --ring: var(--teal);
     --radius: 0.25rem;
 
-    /* Custom tokens */
-    --navy: 220 33% 9%;
-    --navy-light: 220 28% 12%;
-    --navy-lighter: 220 24% 16%;
-    --slate: 210 20% 50%;
-    --slate-light: 210 30% 65%;
-    --slate-lightest: 210 40% 80%;
-    --teal: 166 100% 70%;
-    --white: 0 0% 100%;
+    --sidebar-background: var(--navy);
+    --sidebar-foreground: var(--slate-lightest);
+    --sidebar-primary: var(--teal);
+    --sidebar-primary-foreground: var(--navy);
+    --sidebar-accent: var(--navy-lighter);
+    --sidebar-accent-foreground: var(--slate-lightest);
+    --sidebar-border: var(--navy-lighter);
+    --sidebar-ring: var(--teal);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', 'Calibre', 'San Francisco', 'SF Pro Text', system-ui, sans-serif;
+    background-color: hsl(var(--navy));
+    color: hsl(var(--slate));
+    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
-  ::-webkit-scrollbar {
-    width: 6px;
+  h1, h2, h3, h4 {
+    color: hsl(var(--slate-lightest));
   }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+
+  ::selection {
+    background-color: hsl(var(--teal) / 0.3);
+    color: hsl(var(--slate-lightest));
   }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--navy)); }
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--navy-lighter));
     border-radius: 3px;
@@ -73,85 +88,117 @@
 }
 
 @layer utilities {
-  .text-teal {
-    color: hsl(var(--teal));
+  .font-mono {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
   }
-  .text-slate {
-    color: hsl(var(--slate));
+
+  .text-teal   { color: hsl(var(--teal)); }
+  .text-slate  { color: hsl(var(--slate)); }
+  .text-slate-light { color: hsl(var(--slate-light)); }
+  .text-slate-lightest { color: hsl(var(--slate-lightest)); }
+  .bg-navy     { background-color: hsl(var(--navy)); }
+  .bg-navy-light { background-color: hsl(var(--navy-light)); }
+  .bg-navy-lighter { background-color: hsl(var(--navy-lighter)); }
+  .border-teal { border-color: hsl(var(--teal)); }
+
+  .section-number {
+    @apply font-mono text-teal text-sm mr-2;
   }
-  .text-slate-light {
-    color: hsl(var(--slate-light));
+
+  .numbered-heading {
+    @apply flex items-center text-2xl font-semibold text-slate-lightest mb-10;
+    white-space: nowrap;
   }
-  .text-slate-lightest {
-    color: hsl(var(--slate-lightest));
-  }
-  .bg-navy {
-    background-color: hsl(var(--navy));
-  }
-  .bg-navy-light {
-    background-color: hsl(var(--navy-light));
-  }
-  .bg-navy-lighter {
+
+  .numbered-heading::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-left: 20px;
     background-color: hsl(var(--navy-lighter));
   }
-  .border-navy-lighter {
-    border-color: hsl(var(--navy-lighter));
-  }
-  .border-teal {
-    border-color: hsl(var(--teal));
+
+  .skill-list {
+    @apply font-mono text-xs text-slate-light;
+    padding-left: 1.25rem;
+    position: relative;
   }
 
-  .section-heading {
-    @apply text-sm font-bold tracking-widest uppercase text-slate mb-8;
-  }
-
-  .nav-link {
-    @apply relative text-xs font-bold tracking-widest uppercase text-slate transition-all duration-200;
-  }
-
-  .nav-link:hover {
-    color: hsl(var(--slate-lightest));
-  }
-
-  .nav-link.active {
-    color: hsl(var(--slate-lightest));
-  }
-
-  .nav-link::before {
-    content: '';
-    @apply absolute left-0 top-1/2 -translate-y-1/2 h-px transition-all duration-200;
-    background-color: hsl(var(--slate-lightest));
-    width: 0;
-    left: -24px;
-  }
-
-  .nav-link.active::before,
-  .nav-link:hover::before {
-    width: 40px;
-  }
-
-  .experience-card {
-    @apply relative rounded-sm p-6 transition-all duration-200 cursor-default;
-  }
-
-  .experience-card:hover {
-    background-color: hsl(var(--navy-lighter) / 0.5);
-    box-shadow: inset 0 1px 0 0 hsl(var(--teal) / 0.1);
+  .skill-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: hsl(var(--teal));
   }
 
   .skill-pill {
-    @apply rounded-full px-3 py-1 text-xs font-medium;
+    @apply font-mono text-xs px-3 py-1 rounded;
     background-color: hsl(var(--teal) / 0.1);
     color: hsl(var(--teal));
   }
 
-  .social-link {
-    @apply transition-all duration-200;
-    color: hsl(var(--slate));
+  .teal-btn {
+    @apply font-mono text-sm border rounded px-5 py-3 text-teal transition-all duration-200;
+    border-color: hsl(var(--teal));
+  }
+  .teal-btn:hover {
+    background-color: hsl(var(--teal) / 0.1);
   }
 
+  .inline-link {
+    @apply text-teal relative;
+    text-decoration: none;
+  }
+  .inline-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px transition-all duration-200;
+    background-color: hsl(var(--teal));
+  }
+  .inline-link:hover::after { width: 100%; }
+
+  .project-card {
+    @apply rounded bg-navy-light p-7 transition-all duration-300 flex flex-col h-full;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    background-color: hsl(var(--navy-lighter));
+    box-shadow: 0 10px 30px -15px hsl(var(--navy) / 0.7);
+  }
+
+  .social-link {
+    color: hsl(var(--slate));
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
   .social-link:hover {
-    color: hsl(var(--slate-lightest));
-    transform: translateY(-2px);
+    color: hsl(var(--teal));
+    transform: translateY(-3px);
+  }
+
+  .nav-number {
+    @apply font-mono text-teal text-xs mr-1;
+  }
+
+  .nav-item {
+    @apply text-xs font-mono tracking-widest text-slate-lightest transition-colors duration-200 px-2 py-1;
+  }
+  .nav-item:hover { color: hsl(var(--teal)); }
+
+  .tab-btn {
+    @apply font-mono text-sm py-3 px-5 text-left border-l-2 transition-all duration-200 whitespace-nowrap;
+    border-color: hsl(var(--navy-lighter));
+    color: hsl(var(--slate));
+    background: transparent;
+  }
+  .tab-btn:hover {
+    background-color: hsl(var(--navy-lighter) / 0.5);
+    color: hsl(var(--teal));
+    border-color: hsl(var(--teal));
+  }
+  .tab-btn.active {
+    background-color: hsl(var(--navy-lighter) / 0.5);
+    color: hsl(var(--teal));
+    border-color: hsl(var(--teal));
   }
 }
