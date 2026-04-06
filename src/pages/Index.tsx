@@ -24,76 +24,86 @@ const SKILLS = [
 
 const JOBS = [
   {
+    company: "DocPlanner",
+    url: "https://docplanner.com",
+    roles: [
+      {
+        title: "Senior Product Data Analyst",
+        period: "Jul 2022 – Present",
+        bullets: [
+          "DocPlanner is one of the first Polish unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
+          "Shape product strategy with data-driven insights, define main metrics and map customer journeys.",
+          "Work with higher management and researchers to create and validate hypotheses from both qualitative and quantitative perspectives.",
+          "Lead experiments and A/B tests to accelerate product adoption, retention, engagement, and monetization.",
+        ],
+      },
+      {
+        title: "Interim Product Manager",
+        period: "Jan 2024 – Apr 2024",
+        bullets: [
+          "Established and led a new product team focused on driving monetization from freemium to premium.",
+          "Increased registration conversion rate by 23% through targeted A/B testing and optimization experiments.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "ING Bank",
+    url: "https://ing.pl",
+    roles: [
+      {
+        title: "Senior Data Analyst",
+        period: "Jan 2020 – Jun 2022",
+        bullets: [
+          "Complex analysis of the bank's Self-Employed Clients segment: statistics, profiles, profitability, sales trends, CRM and customer behaviour.",
+          "Used data to support business development, key decisions and strategy in cooperation with stakeholders.",
+          "Tools: SAS (4GL & SQL), PowerBI, Microsoft Excel, Python, Hadoop, Adobe Analytics.",
+        ],
+      },
+      {
+        title: "Data Analyst",
+        period: "Nov 2018 – Dec 2019",
+        bullets: [
+          "Quantitative analysis of customer behaviour: statistics, profiles, segmentation and product usage patterns.",
+          "Prepared ongoing dashboards on marketing communication effectiveness.",
+        ],
+      },
+      {
+        title: "Customer Journey Intern",
+        period: "Dec 2017 – Oct 2018",
+        bullets: [
+          "Supported implementation of new mobile payment products: Google Pay, Apple Pay, BLIK P2P.",
+          "Analyzed customer web behaviour with Adobe Analytics and prepared marketing communication materials.",
+        ],
+      },
+    ],
+  },
+  {
     company: "Mate Academy",
     url: "https://mate.academy",
-    title: "Data Analytics Instructor",
-    period: "Apr 2025 – Present",
-    bullets: [
-      "Creating educational content for a Data Analytics course designed to help students launch their careers in IT.",
-      "Recording video courses covering Tableau, Excel, Google Sheets, and A/B Testing.",
-    ],
-  },
-  {
-    company: "DocPlanner",
-    url: "https://docplanner.com",
-    title: "Interim Product Manager",
-    period: "Jan 2024 – Apr 2024",
-    bullets: [
-      "Established and led a new product team focused on driving monetization from freemium to premium.",
-      "Increased registration conversion rate by 23% through targeted A/B testing and optimization experiments.",
-    ],
-  },
-  {
-    company: "DocPlanner",
-    url: "https://docplanner.com",
-    title: "Senior Product Data Analyst",
-    period: "Jul 2022 – Present",
-    bullets: [
-      "DocPlanner is one of the first Polish unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
-      "Shape product strategy with data-driven insights, define main metrics and map customer journeys.",
-      "Work with higher management and researchers to create and validate hypotheses from both qualitative and quantitative perspectives.",
-      "Lead experiments and A/B tests to accelerate product adoption, retention, engagement, and monetization.",
-    ],
-  },
-  {
-    company: "ING Bank",
-    url: "https://ing.pl",
-    title: "Senior Data Analyst",
-    period: "Jan 2020 – Jun 2022",
-    bullets: [
-      "Complex analysis of the bank's Self-Employed Clients segment: statistics, profiles, profitability, sales trends, CRM and customer behaviour.",
-      "Used data to support business development, key decisions and strategy in cooperation with stakeholders.",
-      "Tools: SAS (4GL & SQL), PowerBI, Microsoft Excel, Python, Hadoop, Adobe Analytics.",
-    ],
-  },
-  {
-    company: "ING Bank",
-    url: "https://ing.pl",
-    title: "Data Analyst",
-    period: "Nov 2018 – Dec 2019",
-    bullets: [
-      "Quantitative analysis of customer behaviour: statistics, profiles, segmentation and product usage patterns.",
-      "Prepared ongoing dashboards on marketing communication effectiveness.",
-    ],
-  },
-  {
-    company: "ING Bank",
-    url: "https://ing.pl",
-    title: "Customer Journey Intern",
-    period: "Dec 2017 – Oct 2018",
-    bullets: [
-      "Supported implementation of new mobile payment products: Google Pay, Apple Pay, BLIK P2P.",
-      "Analyzed customer web behaviour with Adobe Analytics and prepared marketing communication materials.",
+    roles: [
+      {
+        title: "Data Analytics Instructor",
+        period: "Apr 2025 – Present",
+        bullets: [
+          "Creating educational content for a Data Analytics course designed to help students launch their careers in IT.",
+          "Recording video courses covering Tableau, Excel, Google Sheets, and A/B Testing.",
+        ],
+      },
     ],
   },
   {
     company: "Rava Consulting",
     url: "#",
-    title: "Co-Founder",
-    period: "Sep 2018 – Aug 2020",
-    bullets: [
-      "Co-founded a market research organization bridging academia and the business world (Junior Enterprise concept).",
-      "Coordinated projects from idea to delivery and managed a team of 10 people.",
+    roles: [
+      {
+        title: "Co-Founder",
+        period: "Sep 2018 – Aug 2020",
+        bullets: [
+          "Co-founded a market research organization bridging academia and the business world (Junior Enterprise concept).",
+          "Coordinated projects from idea to delivery and managed a team of 10 people.",
+        ],
+      },
     ],
   },
 ];
@@ -321,7 +331,7 @@ function Navbar() {
 function Hero() {
   return (
     <section
-      className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
+      className="min-h-[78vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
       style={{ paddingTop: "80px" }}
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
@@ -334,7 +344,7 @@ function Hero() {
         I turn data into decisions.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-12" style={{ color: "hsl(var(--slate))" }}>
-        I help startups stop guessing and start deciding. I turn product data into clarity — so your team knows what's working, what isn't, and what to do next.
+        I work with startups and scale-ups that want their data to actually drive decisions — not just fill dashboards. You always know what's working, what isn't, and what to do next.
       </motion.p>
 
       {/* Social sidebar */}
@@ -393,9 +403,12 @@ function About() {
       <div className="grid md:grid-cols-5 gap-12 items-start">
         <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
-            <p>
-              My journey started at <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, where I spent 4+ years analysing customer segments, CRM campaigns, and behavioural patterns.
-            </p>
+            <>
+              <p>
+                My journey started at <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, where I spent 4+ years analysing customer segments, CRM campaigns, and behavioural patterns.
+              </p>
+              <br />
+            </>
             <p>
               I then moved into product analytics at{" "}
               <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">DocPlanner</a>
@@ -463,7 +476,7 @@ function Experience() {
         <div className="flex sm:flex-col overflow-x-auto sm:overflow-x-visible sm:min-w-[160px] border-b sm:border-b-0 sm:border-l-0" style={{ borderColor: "hsl(var(--navy-lighter))" }}>
           {JOBS.map((j, i) => (
             <button
-              key={`${j.company}-${j.title}`}
+              key={j.company}
               className={`tab-btn ${activeTab === i ? "active" : ""}`}
               onClick={() => setActiveTab(i)}
             >
@@ -482,24 +495,30 @@ function Experience() {
             transition={{ duration: 0.2 }}
             className="flex-1 sm:pl-8 pt-4 sm:pt-0"
           >
-            <h3 className="text-xl font-medium" style={{ color: "hsl(var(--slate-lightest))" }}>
-              {job.title}{" "}
-              <span className="text-teal">@ </span>
-              <a href={job.url} target="_blank" rel="noopener noreferrer" className="inline-link text-teal">
-                {job.company}
-              </a>
-            </h3>
-            <p className="font-mono text-sm mt-1 mb-5" style={{ color: "hsl(var(--slate))" }}>
-              {job.period}
-            </p>
-            <ul className="space-y-3">
-              {job.bullets.map((b) => (
-                <li key={b} className="flex gap-3 text-sm leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-                  <span className="text-teal mt-0.5 shrink-0">▹</span>
-                  <span>{b}</span>
-                </li>
+            <div className="space-y-10">
+              {job.roles.map((role) => (
+                <div key={`${job.company}-${role.title}`}>
+                  <h3 className="text-xl font-medium" style={{ color: "hsl(var(--slate-lightest))" }}>
+                    {role.title}{" "}
+                    <span className="text-teal">@ </span>
+                    <a href={job.url} target="_blank" rel="noopener noreferrer" className="inline-link text-teal">
+                      {job.company}
+                    </a>
+                  </h3>
+                  <p className="font-mono text-sm mt-1 mb-5" style={{ color: "hsl(var(--slate))" }}>
+                    {role.period}
+                  </p>
+                  <ul className="space-y-3">
+                    {role.bullets.map((b) => (
+                      <li key={b} className="flex gap-3 text-sm leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
+                        <span className="text-teal mt-0.5 shrink-0">▹</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         </AnimatePresence>
       </FadeIn>

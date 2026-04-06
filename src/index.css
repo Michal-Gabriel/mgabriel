@@ -121,8 +121,11 @@
 
   .skill-list {
     @apply font-mono text-xs text-slate-light;
-    padding-left: 1.25rem;
+  }
+
+  .skill-list li {
     position: relative;
+    padding-left: 1.25rem;
   }
 
   .skill-list li::before {
