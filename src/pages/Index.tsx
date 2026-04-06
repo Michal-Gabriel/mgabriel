@@ -577,7 +577,7 @@ function Contact() {
         <p className="mb-12 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           I'm always open to interesting conversations, collaborations, or new opportunities. Whether you have a question or just want to say hi — my inbox is open!
         </p>
-        <a href="mailto:michal.gabriel3@gmail.com" className="teal-btn text-base px-8 py-4">
+        <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noreferrer" className="teal-btn text-base px-8 py-4">
           Say Hello
         </a>
       </FadeIn>
