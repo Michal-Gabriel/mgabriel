@@ -24,14 +24,14 @@ const SKILLS = [
 
 const JOBS = [
   {
-    company: "DocPlanner",
+    company: "Docplanner",
     url: "https://docplanner.com",
     roles: [
       {
         title: "Senior Product Data Analyst",
         period: "Jul 2022 – Present",
         bullets: [
-          "DocPlanner is one of the first Polish unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
+          "Docplanner is one of the first Polish unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
           "Shape product strategy with data-driven insights, define main metrics and map customer journeys.",
           "Work with higher management and researchers to create and validate hypotheses from both qualitative and quantitative perspectives.",
           "Lead experiments and A/B tests to accelerate product adoption, retention, engagement, and monetization.",
@@ -110,7 +110,7 @@ const JOBS = [
 
 const PROJECTS = [
   {
-    title: "Product Analytics at DocPlanner",
+    title: "Product Analytics at Docplanner",
     description:
       "Led data-driven product decisions across 13 markets for the world's largest healthcare marketplace. Defined core metrics, built customer journey maps, and ran A/B experiments that measurably improved conversion and retention.",
     tags: ["BigQuery", "SQL", "Python", "Mixpanel", "Amplitude", "AVO"],
@@ -331,7 +331,7 @@ function Navbar() {
 function Hero() {
   return (
     <section
-      className="min-h-[78vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
+      className="min-h-[68vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
       style={{ paddingTop: "80px" }}
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
@@ -411,7 +411,7 @@ function About() {
             </>
             <p>
               I then moved into product analytics at{" "}
-              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">DocPlanner</a>
+              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">Docplanner</a>
               {" "}— a Polish unicorn — where I work at the intersection of data and product strategy. I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%.
             </p>
           </FadeIn>
@@ -499,11 +499,7 @@ function Experience() {
               {job.roles.map((role) => (
                 <div key={`${job.company}-${role.title}`}>
                   <h3 className="text-xl font-medium" style={{ color: "hsl(var(--slate-lightest))" }}>
-                    {role.title}{" "}
-                    <span className="text-teal">@ </span>
-                    <a href={job.url} target="_blank" rel="noopener noreferrer" className="inline-link text-teal">
-                      {job.company}
-                    </a>
+                    {role.title}
                   </h3>
                   <p className="font-mono text-sm mt-1 mb-5" style={{ color: "hsl(var(--slate))" }}>
                     {role.period}
