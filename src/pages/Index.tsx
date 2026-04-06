@@ -31,7 +31,7 @@ const JOBS = [
         title: "Senior Product Data Analyst",
         period: "Jul 2022 – Mar 2026",
         bullets: [
-          "Docplanner is one of Poland's first unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
+          "Docplanner is one of Poland's first unicorns - the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
           "Partnered with product directors and PMs to shape strategy, define KPIs, and maintain consistent metric definitions across teams.",
           "Designed and evaluated A/B experiments to drive product adoption, retention, and monetisation.",
           "Combined qualitative and quantitative research to build and validate product hypotheses.",
@@ -52,27 +52,28 @@ const JOBS = [
     url: "https://www.linkedin.com/company/ingpolska",
     roles: [
       {
-        title: "Senior Data Analyst",
+        title: "Senior Data Analyst — ING Bank",
         period: "Jan 2020 – Jun 2022",
         bullets: [
-          "Complex analysis of the bank's Self-Employed Clients segment: statistics, profiles, profitability, sales trends, CRM and customer behaviour.",
-          "Used data to support business development, key decisions and strategy in cooperation with stakeholders.",
-          "Tools: SAS (4GL & SQL), PowerBI, Microsoft Excel, Python, Hadoop, Adobe Analytics.",
+          "Led analytics for the Self-Employed Clients segment: profitability, sales trends, CRM performance, and behavioural patterns.",
+          "Built personalised offer datasets distributed across the sales network — contributing to 16% of credit sales during Covid.",
+          "Saved 30 hours/month by automating recurring reports.",
+          "Supported CRM rollout across ~300 sales employees.",
         ],
       },
       {
-        title: "Data Analyst",
+        title: "Data Analyst — ING Bank",
         period: "Nov 2018 – Dec 2019",
         bullets: [
-          "Quantitative analysis of customer behaviour: statistics, profiles, segmentation and product usage patterns.",
-          "Prepared ongoing dashboards on marketing communication effectiveness.",
+          "Quantitative analysis of customer behaviour: segmentation, product usage, and marketing effectiveness.",
+          "Built and maintained dashboards tracking marketing communication performance.",
         ],
       },
       {
-        title: "Customer Journey Intern",
+        title: "Intern — ING Bank",
         period: "Dec 2017 – Oct 2018",
         bullets: [
-          "Supported implementation of new mobile payment products: Google Pay, Apple Pay, BLIK P2P.",
+          "Supported implementation of Google Pay, Apple Pay, and BLIK P2P for ING customers.",
           "Analyzed customer web behaviour with Adobe Analytics and prepared marketing communication materials.",
         ],
       },
@@ -344,7 +345,7 @@ function Hero() {
         I turn data into decisions.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-6" style={{ color: "hsl(var(--slate))" }}>
-        I work with startups and scale-ups that want their data to actually drive decisions — not just fill dashboards. You always know what's working, what isn't, and what to do next.
+        I work with startups and scale-ups that want their data to actually drive decisions - not just fill dashboards. You always know what's working, what isn't, and what to do next.
       </motion.p>
 
       {/* Social sidebar */}
@@ -416,7 +417,7 @@ function About() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <p>
-              These days I work independently with startups and scale-ups. And teach data analytics to the next generation of analysts at{" "}
+              These days I work independently with startups and scale-ups. I also help build the next generation of data analysts by teaching at{" "}
               <a href="https://www.linkedin.com/school/mateacademy/" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
             </p>
           </FadeIn>
