@@ -52,17 +52,17 @@ const JOBS = [
     url: "https://www.linkedin.com/company/ingpolska",
     roles: [
       {
-        title: "Senior Data Analyst — ING Bank",
+        title: "Senior Data Analyst",
         period: "Jan 2020 – Jun 2022",
         bullets: [
           "Led analytics for the Self-Employed Clients segment: profitability, sales trends, CRM performance, and behavioural patterns.",
-          "Built personalised offer datasets distributed across the sales network — contributing to 16% of credit sales during Covid.",
+          "Built personalised offer datasets distributed across the sales network - contributing to 16% of credit sales during Covid.",
           "Saved 30 hours/month by automating recurring reports.",
           "Supported CRM rollout across ~300 sales employees.",
         ],
       },
       {
-        title: "Data Analyst — ING Bank",
+        title: "Data Analyst",
         period: "Nov 2018 – Dec 2019",
         bullets: [
           "Quantitative analysis of customer behaviour: segmentation, product usage, and marketing effectiveness.",
@@ -70,7 +70,7 @@ const JOBS = [
         ],
       },
       {
-        title: "Intern — ING Bank",
+        title: "Intern",
         period: "Dec 2017 – Oct 2018",
         bullets: [
           "Supported implementation of Google Pay, Apple Pay, and BLIK P2P for ING customers.",
@@ -575,7 +575,7 @@ function Contact() {
           Get In Touch
         </h2>
         <p className="mb-12 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-          I'm always open to interesting conversations, collaborations, or new opportunities. Whether you have a question or just want to say hi — my inbox is open!
+          I'm always open to interesting conversations, collaborations, or new opportunities. Whether you have a question or just want to say hi - my inbox is open!
         </p>
         <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noreferrer" className="teal-btn text-base px-8 py-4">
           Say Hello
