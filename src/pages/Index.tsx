@@ -325,29 +325,14 @@ function Hero() {
       style={{ paddingTop: "80px" }}
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
-        Hi, my name is
+        Hi, I'm Michał Gabriel.
       </motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-5xl md:text-7xl font-bold text-slate-lightest leading-tight mb-3">
-        Michał Gabriel.
-      </motion.h1>
       <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-4xl md:text-6xl font-bold leading-tight mb-8" style={{ color: "hsl(var(--slate))" }}>
-        I turn data into decisions.
+        I help startups stop guessing and start deciding.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-12" style={{ color: "hsl(var(--slate))" }}>
-        I'm a <span style={{ color: "hsl(var(--slate-lightest))" }}>Senior Product Data Analyst</span> at{" "}
-        <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">DocPlanner</a>
-        {" "}— the world's largest healthcare marketplace, serving 90M+ patients across 13 countries. I specialise in A/B experiments, product metrics, and translating complex data into clear business impact.
+        I turn product data into clarity — so your team knows what's working, what isn't, and what to do next.
       </motion.p>
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        href="#work"
-        onClick={(e) => { e.preventDefault(); document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" }); }}
-        className="teal-btn self-start text-base"
-      >
-        Check out my work!
-      </motion.a>
 
       {/* Social sidebar */}
       <motion.div
@@ -406,8 +391,7 @@ function About() {
         <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
             <p>
-              Hello! I'm Michał, a data analyst based in{" "}
-              <span className="text-teal">Warsaw, Poland</span>. I love making sense of complex data and turning it into product decisions that actually move the needle.
+              I make sense of complex data and turn it into product decisions that actually move the needle.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -418,10 +402,15 @@ function About() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p>
-              I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%. Outside of work I create Data Analytics courses at{" "}
-              <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
-            </p>
+            <>
+              <p>
+                I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%.
+              </p>
+              <p>
+                I'm also creating Data Analytics courses at{" "}
+                <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
+              </p>
+            </>
           </FadeIn>
           <FadeIn delay={0.4}>
             <p>Here are some technologies I work with:</p>
