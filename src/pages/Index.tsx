@@ -25,31 +25,31 @@ const SKILLS = [
 const JOBS = [
   {
     company: "Docplanner",
-    url: "https://docplanner.com",
+    url: "https://www.linkedin.com/company/docplannergroup",
     roles: [
       {
         title: "Senior Product Data Analyst",
-        period: "Jul 2022 – Present",
+        period: "Jul 2022 – Mar 2026",
         bullets: [
-          "Docplanner is one of the first Polish unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
-          "Shape product strategy with data-driven insights, define main metrics and map customer journeys.",
-          "Work with higher management and researchers to create and validate hypotheses from both qualitative and quantitative perspectives.",
-          "Lead experiments and A/B tests to accelerate product adoption, retention, engagement, and monetization.",
+          "Docplanner is one of Poland's first unicorns — the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
+          "Partnered with product directors and PMs to shape strategy, define KPIs, and maintain consistent metric definitions across teams.",
+          "Designed and evaluated A/B experiments to drive product adoption, retention, and monetisation.",
+          "Combined qualitative and quantitative research to build and validate product hypotheses.",
         ],
       },
       {
         title: "Interim Product Manager",
-        period: "Jan 2024 – Apr 2024",
+        period: "Dec 2023 – Apr 2024",
         bullets: [
-          "Established and led a new product team focused on driving monetization from freemium to premium.",
-          "Increased registration conversion rate by 23% through targeted A/B testing and optimization experiments.",
+          "Established and led a new product team focused on converting freemium users to premium.",
+          "Increased registration conversion by 23% through a structured programme of A/B experiments.",
         ],
       },
     ],
   },
   {
     company: "ING Bank",
-    url: "https://ing.pl",
+    url: "https://www.linkedin.com/company/ingpolska",
     roles: [
       {
         title: "Senior Data Analyst",
@@ -80,7 +80,7 @@ const JOBS = [
   },
   {
     company: "Mate Academy",
-    url: "https://mate.academy",
+    url: "https://www.linkedin.com/school/mateacademy/",
     roles: [
       {
         title: "Data Analytics Instructor",
@@ -404,9 +404,9 @@ function About() {
         <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
             <p>
-              I've spent 7+ years helping teams make better decisions with data — starting at{" "}
-              <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, then moving into product analytics at{" "}
-              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">Docplanner</a>, one of Poland's first unicorns.
+              I've spent over 8 years helping teams make better decisions with data. Starting at{" "}
+              <a href="https://www.linkedin.com/company/ingpolska" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, then moving into product analytics at{" "}
+              <a href="https://www.linkedin.com/company/docplannergroup" target="_blank" rel="noopener noreferrer" className="inline-link">Docplanner</a>, one of Poland's first unicorns.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -416,8 +416,8 @@ function About() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <p>
-              These days I work independently with startups and scale-ups — and teach data analytics on the side at{" "}
-              <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
+              These days I work independently with startups and scale-ups. And teach data analytics to the next generation of analysts at{" "}
+              <a href="https://www.linkedin.com/school/mateacademy/" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>
