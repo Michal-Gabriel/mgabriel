@@ -6,8 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const NAV_ITEMS = [
   { label: "About",      num: "01", href: "#about" },
   { label: "Experience", num: "02", href: "#experience" },
-  { label: "Work",       num: "03", href: "#work" },
-  { label: "Contact",    num: "04", href: "#contact" },
+  { label: "Contact",    num: "03", href: "#contact" },
 ];
 
 const SKILLS = [
@@ -571,7 +570,7 @@ function Contact() {
   return (
     <section id="contact" className="py-24 px-6 text-center max-w-xl mx-auto">
       <FadeIn>
-        <p className="font-mono text-teal text-sm mb-4">04. What's Next?</p>
+        <p className="font-mono text-teal text-sm mb-4">03. What's Next?</p>
         <h2 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
           Get In Touch
         </h2>
@@ -615,7 +614,7 @@ export default function Index() {
         <Hero />
         <About />
         <Experience />
-        <Work />
+        
         <Contact />
       </main>
       <Footer />
