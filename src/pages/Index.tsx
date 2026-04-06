@@ -325,13 +325,16 @@ function Hero() {
       style={{ paddingTop: "80px" }}
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
-        Hi, I'm Michał Gabriel.
+        Hi, my name is
       </motion.p>
+      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-5xl md:text-7xl font-bold text-slate-lightest leading-tight mb-3">
+        Michał Gabriel.
+      </motion.h1>
       <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-4xl md:text-6xl font-bold leading-tight mb-8" style={{ color: "hsl(var(--slate))" }}>
-        I help startups stop guessing and start deciding.
+        I turn data into decisions.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-12" style={{ color: "hsl(var(--slate))" }}>
-        I turn product data into clarity — so your team knows what's working, what isn't, and what to do next.
+        I help startups stop guessing and start deciding. I turn product data into clarity — so your team knows what's working, what isn't, and what to do next.
       </motion.p>
 
       {/* Social sidebar */}
@@ -391,28 +394,21 @@ function About() {
         <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
             <p>
-              I make sense of complex data and turn it into product decisions that actually move the needle.
+              My journey started at <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, where I spent 4+ years analysing customer segments, CRM campaigns, and behavioural patterns.
+            </p>
+            <p>
+              I then moved into product analytics at{" "}
+              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">DocPlanner</a>
+              {" "}— a Polish unicorn — where I work at the intersection of data and product strategy. I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p>
-              My journey started at <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, where I spent 4+ years analysing customer segments, CRM campaigns, and behavioural patterns. I then moved into product analytics at{" "}
-              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">DocPlanner</a>
-              {" "}— a Polish unicorn — where I work at the intersection of data and product strategy.
+              I'm also creating Data Analytics courses at{" "}
+              <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <>
-              <p>
-                I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%.
-              </p>
-              <p>
-                I'm also creating Data Analytics courses at{" "}
-                <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
-              </p>
-            </>
-          </FadeIn>
-          <FadeIn delay={0.4}>
             <p>Here are some technologies I work with:</p>
             <ul className="grid grid-cols-2 gap-1 mt-4 skill-list">
               {SKILLS.map((s) => <li key={s}>{s}</li>)}
@@ -557,7 +553,7 @@ function Work() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 text-center max-w-xl mx-auto">
+    <section id="contact" className="pt-14 pb-24 px-6 text-center max-w-xl mx-auto">
       <FadeIn>
         <p className="font-mono text-teal text-sm mb-4">03. What's Next?</p>
         <h2 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
