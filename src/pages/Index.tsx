@@ -331,7 +331,7 @@ function Navbar() {
 function Hero() {
   return (
     <section
-      className="min-h-[68vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
+      className="min-h-[56vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
       style={{ paddingTop: "80px" }}
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
@@ -343,7 +343,7 @@ function Hero() {
       <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-4xl md:text-6xl font-bold leading-tight mb-8" style={{ color: "hsl(var(--slate))" }}>
         I turn data into decisions.
       </motion.h2>
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-12" style={{ color: "hsl(var(--slate))" }}>
+      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-6" style={{ color: "hsl(var(--slate))" }}>
         I work with startups and scale-ups that want their data to actually drive decisions — not just fill dashboards. You always know what's working, what isn't, and what to do next.
       </motion.p>
 
@@ -403,25 +403,24 @@ function About() {
       <div className="grid md:grid-cols-5 gap-12 items-start">
         <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
-            <>
-              <p>
-                My journey started at <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, where I spent 4+ years analysing customer segments, CRM campaigns, and behavioural patterns.
-              </p>
-              <br />
-            </>
             <p>
-              I then moved into product analytics at{" "}
-              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">Docplanner</a>
-              {" "}— a Polish unicorn — where I work at the intersection of data and product strategy. I also briefly stepped into a <span style={{ color: "hsl(var(--slate-lightest))" }}>Product Manager</span> role, leading an experiment-driven team that boosted registration conversion by 23%.
+              I've spent 7+ years helping teams make better decisions with data — starting at{" "}
+              <a href="https://ing.pl" target="_blank" rel="noopener noreferrer" className="inline-link">ING Bank</a>, then moving into product analytics at{" "}
+              <a href="https://docplanner.com" target="_blank" rel="noopener noreferrer" className="inline-link">Docplanner</a>, one of Poland's first unicorns.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p>
-              I'm also creating Data Analytics courses at{" "}
-              <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
+              Along the way I've run A/B experiments, defined product metrics, and helped product teams cut through noise to understand what was actually working.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
+            <p>
+              These days I work independently with startups and scale-ups — and teach data analytics on the side at{" "}
+              <a href="https://mate.academy" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
             <p>Here are some technologies I work with:</p>
             <ul className="grid grid-cols-2 gap-1 mt-4 skill-list">
               {SKILLS.map((s) => <li key={s}>{s}</li>)}
@@ -429,7 +428,7 @@ function About() {
           </FadeIn>
         </div>
 
-        {/* Avatar placeholder */}
+        {/* Profile image */}
         <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end">
           <div className="relative w-56 h-56 md:w-64 md:h-64 group">
             <div
@@ -444,11 +443,11 @@ function About() {
                 className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
                 style={{ backgroundColor: "hsl(var(--teal) / 0.2)" }}
               />
-              <div className="w-full h-full flex items-center justify-center font-bold text-6xl"
-                style={{ color: "hsl(var(--teal))" }}
-              >
-                MG
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
+                alt="Michał Gabriel"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </FadeIn>
