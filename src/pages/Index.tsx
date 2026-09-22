@@ -582,18 +582,22 @@ function Work() {
 
 function Contact() {
   return (
-    <section id="contact" className="pt-12 pb-24 px-6 text-center max-w-xl mx-auto">
+    <section id="contact" className="pt-12 pb-24 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
-        <p className="font-mono text-teal text-sm mb-4">4. What's Next?</p>
-        <h2 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
-          Get In Touch
+        <h2 className="numbered-heading">
+          <span className="section-number">4.</span> What's Next?
         </h2>
-        <p className="mb-12 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-          I'm always open to interesting conversations, collaborations, or new opportunities. Whether you have a question or just want to say hi - my inbox is open!
-        </p>
-        <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noreferrer" className="teal-btn text-base px-8 py-4">
-          Say Hello
-        </a>
+        <div className="max-w-xl mx-auto text-center">
+          <h3 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
+            Get In Touch
+          </h3>
+          <p className="mb-12 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
+            I'm always open to interesting conversations, collaborations, or new opportunities. Whether you have a question or just want to say hi - my inbox is open!
+          </p>
+          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noreferrer" className="teal-btn text-base px-8 py-4">
+            Say Hello
+          </a>
+        </div>
       </FadeIn>
     </section>
   );
