@@ -345,7 +345,7 @@ function Hero() {
         I turn data into decisions.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-6" style={{ color: "hsl(var(--slate))" }}>
-        I work with startups and scale-ups that want their data to actually drive decisions - not just fill dashboards. You always know what's working, what isn't, and what to do next.
+        I work with startups and scale-ups that want their data to actually drive decisions. You always know what's working, what isn't, and what to do next.
       </motion.p>
 
       {/* Social sidebar */}
