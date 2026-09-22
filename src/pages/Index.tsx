@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_ITEMS = [
-  { label: "About",      num: "01", href: "#about" },
-  { label: "Experience", num: "02", href: "#experience" },
-  { label: "Contact",    num: "03", href: "#contact" },
+  { label: "About",           num: "1", href: "#about" },
+  { label: "Experience",      num: "2", href: "#experience" },
+  { label: "Success Stories", num: "3", href: "#success-stories" },
+  { label: "Contact",         num: "4", href: "#contact" },
 ];
 
 const SKILLS = [
@@ -332,8 +333,7 @@ function Navbar() {
 function Hero() {
   return (
     <section
-      className="min-h-[56vh] flex flex-col justify-center px-6 md:px-16 lg:px-32 max-w-5xl mx-auto"
-      style={{ paddingTop: "80px" }}
+      className="flex flex-col justify-center px-6 pt-28 pb-12 md:px-16 md:pt-32 md:pb-16 lg:px-32 max-w-5xl mx-auto"
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-base">
         Hi, my name is
@@ -394,10 +394,10 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-24 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="about" className="pt-12 pb-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">01.</span> About Me
+          <span className="section-number">1.</span> About Me
         </h2>
       </FadeIn>
 
@@ -464,10 +464,10 @@ function Experience() {
   const job = JOBS[activeTab];
 
   return (
-    <section id="experience" className="py-24 px-6 md:px-16 lg:px-32 max-w-4xl mx-auto">
+    <section id="experience" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">02.</span> Where I've Worked
+          <span className="section-number">2.</span> Where I've Worked
         </h2>
       </FadeIn>
 
@@ -522,6 +522,20 @@ function Experience() {
   );
 }
 
+// ── Success Stories ──────────────────────────────────────────────────────────
+
+function SuccessStories() {
+  return (
+    <section id="success-stories" className="py-12 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+      <FadeIn>
+        <h2 className="numbered-heading mb-0">
+          <span className="section-number">3.</span> Success Stories
+        </h2>
+      </FadeIn>
+    </section>
+  );
+}
+
 // ── Work / Projects ───────────────────────────────────────────────────────────
 
 function Work() {
@@ -568,9 +582,9 @@ function Work() {
 
 function Contact() {
   return (
-    <section id="contact" className="pt-14 pb-24 px-6 text-center max-w-xl mx-auto">
+    <section id="contact" className="pt-12 pb-24 px-6 text-center max-w-xl mx-auto">
       <FadeIn>
-        <p className="font-mono text-teal text-sm mb-4">03. What's Next?</p>
+        <p className="font-mono text-teal text-sm mb-4">4. What's Next?</p>
         <h2 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
           Get In Touch
         </h2>
@@ -609,7 +623,7 @@ export default function Index() {
         <Hero />
         <About />
         <Experience />
-        
+        <SuccessStories />
         <Contact />
       </main>
       <Footer />
