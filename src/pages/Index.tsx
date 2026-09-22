@@ -595,11 +595,6 @@ function Footer() {
         <a href="mailto:michal.gabriel3@gmail.com" className="social-link"><IconMail /></a>
         <a href="#" className="social-link"><IconGitHub /></a>
       </div>
-      <p className="font-mono text-xs" style={{ color: "hsl(var(--slate))" }}>
-        Designed with inspiration from{" "}
-        <a href="https://v4.brittanychiang.com" target="_blank" rel="noopener noreferrer" className="inline-link">Brittany Chiang</a>
-        {" "}· Built by Michał Gabriel
-      </p>
     </footer>
   );
 }
