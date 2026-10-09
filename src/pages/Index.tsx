@@ -549,7 +549,7 @@ function SuccessStories() {
         </h2>
         <div className="success-stories-grid">
         <article className="story-preview">
-          <p className="story-eyebrow">edrone · Data team · January – April</p>
+          <p className="story-eyebrow">edrone · Data quality</p>
           <h3 className="text-2xl font-semibold mt-5 mb-5">From Data Bottleneck to Company-Wide Access</h3>
           <p className="text-slate-light leading-relaxed">A company of 170. A reporting tool only eleven people opened. In four months, data went from one team's resource to something more than half the company actually used.</p>
           <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But getting people to open a dashboard wasn't the first problem we had to solve. The bigger one was invisible.</p>
@@ -558,7 +558,7 @@ function SuccessStories() {
           </a>
         </article>
         <article className="story-preview">
-          <p className="story-eyebrow">edrone · Product-led growth & activation · January – April</p>
+          <p className="story-eyebrow">edrone · Product-led growth</p>
           <h3 className="text-2xl font-semibold mt-5 mb-5">Doubling Registration Conversion</h3>
           <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months. We simplified registration, removed fields, and made the value clearer — doubling the share of visitors who registered.</p>
           <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But the biggest monthly jump came after we stopped removing things and started explaining what people would gain.</p>

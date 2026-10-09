@@ -23,7 +23,7 @@ export default function ElevenOutOf170() {
             <p className="story-eyebrow">Success story / 01</p>
             <h1>From Data Bottleneck to Company-Wide Access</h1>
             <p className="story-deck">How data at edrone stopped being one team's resource — in four months.</p>
-            <p className="story-eyebrow">edrone · Data team · January – April</p>
+            <p className="story-eyebrow">edrone · Data quality</p>
           </header>
           <div className="story-body">
             <p>When I joined edrone in January, reporting ran on Tableau. The tool worked — technically. It had dashboards, it had data, it had licences. And over an entire month, eleven people opened it.</p>
