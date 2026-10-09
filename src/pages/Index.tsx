@@ -25,12 +25,28 @@ const SKILLS = [
 
 const JOBS = [
   {
+    company: "edrone",
+    url: "https://www.linkedin.com/company/edrone",
+    roles: [
+      {
+        title: "Data Lead",
+        period: "Jan 2026 – Present",
+        bullets: [
+          "Leading and facilitating all analytical initiatives across the company.",
+          "Partnering with C-level leadership to prioritize initiatives and enable data-driven decision-making.",
+          "Leading Product-Led Growth initiatives by identifying activation, adoption, and retention opportunities across the user journey, translating product data into growth experiments and new product development projects.",
+          "Mentoring developers, designers, and team leads in adopting a data-driven approach to projects, defining success metrics, and evaluating performance against goals.",
+        ],
+      },
+    ],
+  },
+  {
     company: "Docplanner",
     url: "https://www.linkedin.com/company/docplannergroup",
     roles: [
       {
         title: "Senior Product Data Analyst",
-        period: "Jul 2022 – Mar 2026",
+        period: "Jul 2022 – Feb 2026",
         bullets: [
           "Docplanner is one of Poland's first unicorns - the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
           "Partnered with product directors and PMs to shape strategy, define KPIs, and maintain consistent metric definitions across teams.",
