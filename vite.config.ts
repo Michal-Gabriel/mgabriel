@@ -17,6 +17,7 @@ export default defineConfig(() => ({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
+        registrationStory: path.resolve(__dirname, "success-stories/doubling-registration-conversion/index.html"),
         story: path.resolve(__dirname, "success-stories/eleven-out-of-170/index.html"),
       },
     },
