@@ -255,3 +255,9 @@ a:focus-visible { outline: 2px solid hsl(var(--teal)); outline-offset: 5px; }
 .story-body .conversion-note { margin: 1rem 0 0; font-size: 0.75rem; line-height: 1.7; }
 .conversion-chart-scroll:focus-visible { outline: 2px solid hsl(var(--teal)); outline-offset: 3px; }
 @media (max-width: 600px) { .conversion-milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.success-stories-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+.success-stories-grid .story-preview { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; font-size: 0.875rem; }
+.success-stories-grid .story-preview .teal-btn { margin-top: auto; align-self: flex-start; }
+@media (min-width: 640px) { .success-stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .success-stories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
