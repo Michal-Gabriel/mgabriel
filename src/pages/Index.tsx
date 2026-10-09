@@ -528,9 +528,18 @@ function SuccessStories() {
   return (
     <section id="success-stories" className="py-12 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
-        <h2 className="numbered-heading mb-0">
+        <h2 className="numbered-heading">
           <span className="section-number">3.</span> Success Stories
         </h2>
+        <article className="story-preview">
+          <p className="story-eyebrow">edrone · Data team · January – April</p>
+          <h3 className="text-3xl md:text-4xl font-semibold mt-5 mb-5">From Data Bottleneck to Company-Wide Access</h3>
+          <p className="text-slate-light leading-relaxed">A company of 170. A reporting tool only eleven people opened. In four months, data went from one team's resource to something more than half the company actually used.</p>
+          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But getting people to open a dashboard wasn't the first problem we had to solve. The bigger one was invisible.</p>
+          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/eleven-out-of-170/`}>
+            Read the full story <span aria-hidden="true">→</span>
+          </a>
+        </article>
       </FadeIn>
     </section>
   );
@@ -620,6 +629,11 @@ function Footer() {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function Index() {
+  useEffect(() => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) target.scrollIntoView({ behavior: "instant" });
+  }, []);
+
   return (
     <div style={{ backgroundColor: "hsl(var(--navy))" }} className="min-h-screen">
       <Navbar />
