@@ -19,7 +19,7 @@ export default function RegistrationConversion() {
             <p className="story-eyebrow">Success story / 02</p>
             <h1>Doubling Registration Conversion</h1>
             <p className="story-deck">How removing friction and making the value clearer helped edrone turn more visitors into registrations.</p>
-            <p className="story-eyebrow">edrone · Product-led growth & activation · January – April</p>
+            <p className="story-eyebrow">edrone · Product-led growth</p>
           </header>
           <div className="story-body">
             <p>In January, the registration conversion rate at edrone was 6.5%. By April, it was 13%. Over those four months, we changed what the registration flow asked people to do — and how it explained why they should do it.</p>
