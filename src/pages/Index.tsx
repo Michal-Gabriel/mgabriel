@@ -556,6 +556,13 @@ function SuccessStories() {
             Read the full story <span aria-hidden="true">→</span>
           </a>
         </article>
+        <article className="story-preview mt-6">
+          <p className="story-eyebrow">edrone · Product-led growth & activation · January – April</p>
+          <h3 className="text-3xl md:text-4xl font-semibold mt-5 mb-5">Doubling Registration Conversion</h3>
+          <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months. We simplified registration, removed fields, and made the value clearer — doubling the share of visitors who registered.</p>
+          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But the biggest monthly jump came after we stopped removing things and started explaining what people would gain.</p>
+          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/doubling-registration-conversion/`}>Read the full story <span aria-hidden="true">→</span></a>
+        </article>
       </FadeIn>
     </section>
   );
