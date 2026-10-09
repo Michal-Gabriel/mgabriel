@@ -46,7 +46,7 @@ const JOBS = [
     roles: [
       {
         title: "Senior Product Data Analyst",
-        period: "Jul 2022 – Feb 2026",
+        period: "Jul 2022 – Jan 2026",
         bullets: [
           "Docplanner is one of Poland's first unicorns - the world's largest healthcare marketplace, operating in 13 countries and serving 90M+ patients monthly.",
           "Partnered with product directors and PMs to shape strategy, define KPIs, and maintain consistent metric definitions across teams.",
