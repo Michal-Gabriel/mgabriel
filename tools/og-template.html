@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Open Graph image template — Michał Gabriel</title>
+<style>
+:root{--navy:220 43% 11%;--teal:166 100% 70%;--slate-lightest:218 27% 84%;--slate-light:218 22% 67%;--border:220 30% 18%}
+*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{background:hsl(var(--navy));color:hsl(var(--slate-lightest));font-family:Inter,-apple-system,system-ui,sans-serif}main{width:1200px;height:630px;padding:64px 72px;display:flex;flex-direction:column;border-top:8px solid hsl(var(--teal))}.eyebrow,footer{font-family:monospace;color:hsl(var(--teal));font-size:20px;letter-spacing:2px}h1{font-size:64px;letter-spacing:-2px;line-height:1.12;margin:36px 0 20px;max-width:1050px}p{font-size:32px;color:hsl(var(--slate-light));margin:0}.metrics{font-size:34px;color:hsl(var(--teal));margin-top:auto;padding:24px 0;border-top:1px solid hsl(var(--border));font-weight:600}footer{font-size:17px;letter-spacing:0}
+</style>
+</head>
+<body><main>
+<div class="eyebrow" id="eyebrow">FRACTIONAL HEAD OF DATA</div>
+<h1 id="headline">AI answers only as well as the data beneath it.</h1>
+<p id="subtitle">Michał Gabriel · Fractional Head of Data</p>
+<div class="metrics" id="metrics">33% → 70% · 11 → 103</div>
+<footer>michal-gabriel.github.io/mgabriel</footer>
+</main>
+<script>
+const variants={
+  eleven:{headline:'From Data Bottleneck to Company-Wide Access',subtitle:'edrone · Data quality',metrics:'11 → 103 monthly data users'},
+  conversion:{headline:'Doubling Registration Conversion',subtitle:'edrone · Product-led growth',metrics:'6.5% → 13% registration rate'}
+};
+const variant=variants[new URLSearchParams(location.search).get('variant')];
+if(variant){for(const key of ['headline','subtitle','metrics']) document.getElementById(key).textContent=variant[key];document.getElementById('eyebrow').textContent='SUCCESS STORY · MICHAŁ GABRIEL';}
+</script>
+</body>
+</html>
