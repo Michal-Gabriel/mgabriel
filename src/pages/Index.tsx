@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_ITEMS = [
   { label: "About",           num: "1", href: "#about" },
-  { label: "How I Work",      num: "2", href: "#how-i-work" },
-  { label: "Success Stories", num: "3", href: "#success-stories" },
-  { label: "Experience",      num: "4", href: "#experience" },
+  { label: "Success Stories", num: "2", href: "#success-stories" },
+  { label: "Experience",      num: "3", href: "#experience" },
+  { label: "How I Work",      num: "4", href: "#how-i-work" },
   { label: "Contact",         num: "5", href: "#contact" },
 ];
 
@@ -388,10 +388,6 @@ function ProofBar() {
           <dd className="proof-label">{p.label}</dd>
         </div>
       ))}
-      <div className="proof-item">
-        <dt className="proof-pair"><span className="proof-after">8 yrs</span></dt>
-        <dd className="proof-label">ING Bank, Docplanner, edrone</dd>
-      </div>
     </motion.dl>
   );
 }
@@ -419,17 +415,6 @@ function Hero() {
 
       <ProofBar />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-        className="flex flex-wrap gap-4 mt-10"
-      >
-        <a href="#how-i-work" className="teal-btn text-base px-7 py-3.5">How I work</a>
-        <a href={`${import.meta.env.BASE_URL}success-stories/eleven-out-of-170/`} className="ghost-btn text-base px-7 py-3.5">
-          Read the edrone story
-        </a>
-      </motion.div>
 
       {/* Social sidebar */}
       <motion.div
@@ -557,7 +542,7 @@ function HowIWork() {
     <section id="how-i-work" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">2.</span> How I Work
+          <span className="section-number">4.</span> How I Work
         </h2>
       </FadeIn>
 
@@ -636,7 +621,7 @@ function Experience() {
     <section id="experience" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">4.</span> Where I've Worked
+          <span className="section-number">3.</span> Where I've Worked
         </h2>
       </FadeIn>
 
@@ -707,7 +692,7 @@ function SuccessStories() {
     <section id="success-stories" className="py-12 px-6 md:px-16 lg:px-32 max-w-7xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">3.</span> Success Stories
+          <span className="section-number">2.</span> Success Stories
         </h2>
         <div className="success-stories-grid">
         <article className="story-preview">
@@ -830,9 +815,9 @@ export default function Index() {
       <main id="content">
         <Hero />
         <About />
-        <HowIWork />
         <SuccessStories />
         <Experience />
+        <HowIWork />
         <Contact />
       </main>
       <Footer />

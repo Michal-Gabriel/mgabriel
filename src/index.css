@@ -294,7 +294,7 @@ a:focus-visible { outline: 2px solid hsl(var(--teal)); outline-offset: 5px; }
   color: hsl(var(--slate));
   max-width: 17rem;
 }
-@media (min-width: 700px) { .proof-bar { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; } }
+@media (min-width: 700px) { .proof-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; } }
 
 /* ── Secondary button ───────────────────────────────────────────────────────── */
 
