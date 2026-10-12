@@ -535,6 +535,61 @@ function About() {
 
 // ── How I Work ────────────────────────────────────────────────────────────────
 
+const EVAL_SAMPLE = [
+  { q: "How many active customers did we have last month?",   before: false, after: true  },
+  { q: "What was MRR in Q2 — and does finance agree?",         before: false, after: true  },
+  { q: "Which plan do customers churn from most?",             before: true,  after: true  },
+  { q: "How many orders came through the mobile app?",         before: false, after: true  },
+  { q: "What did we spend to acquire a customer in Q2?",       before: false, after: false },
+];
+
+function Mark({ ok }: { ok: boolean }) {
+  return (
+    <span className={ok ? "eval-yes" : "eval-no"} role="img" aria-label={ok ? "correct" : "wrong"}>
+      {ok ? "✓" : "✗"}
+    </span>
+  );
+}
+
+function EvalSample() {
+  const before = EVAL_SAMPLE.filter((r) => r.before).length;
+  const after = EVAL_SAMPLE.filter((r) => r.after).length;
+
+  return (
+    <figure className="eval-sample">
+      <figcaption className="eval-sample-head">What the scored set looks like</figcaption>
+      <table className="eval-table">
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Before</th>
+            <th scope="col">After</th>
+          </tr>
+        </thead>
+        <tbody>
+          {EVAL_SAMPLE.map((row) => (
+            <tr key={row.q}>
+              <th scope="row">{row.q}</th>
+              <td><Mark ok={row.before} /></td>
+              <td><Mark ok={row.after} /></td>
+            </tr>
+          ))}
+          <tr className="eval-total">
+            <th scope="row">Answered correctly</th>
+            <td>{before}/{EVAL_SAMPLE.length}</td>
+            <td>{after}/{EVAL_SAMPLE.length}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p className="eval-note">
+        Illustrative. Your set is built from questions your business already asks and already knows
+        the answers to. Some come back right the first time. Some stay broken after the first pass —
+        and then at least you know which.
+      </p>
+    </figure>
+  );
+}
+
 function HowIWork() {
   return (
     <section id="how-i-work" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
@@ -570,6 +625,7 @@ function HowIWork() {
                   </li>
                 ))}
               </ul>
+              {i === 0 && <EvalSample />}
             </article>
           </FadeIn>
         ))}
@@ -703,10 +759,10 @@ function SuccessStories() {
           </a>
         </article>
         <article className="story-preview">
-          <p className="story-eyebrow">edrone · Product-led growth</p>
+          <p className="story-eyebrow">edrone · Measured decisions</p>
           <h3 className="text-2xl font-semibold mt-5 mb-5">Doubling Registration Conversion</h3>
-          <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months. We simplified registration, removed fields, and made the value clearer — doubling the share of visitors who registered.</p>
-          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But the biggest monthly jump came after we stopped removing things and started explaining what people would gain.</p>
+          <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months, across four changes — each one measured on its own, so we knew which of them actually did the work.</p>
+          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">Removing friction worked first, then stopped working. The number pointed somewhere our instinct did not.</p>
           <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/doubling-registration-conversion/`}>Read the full story <span aria-hidden="true">→</span></a>
         </article>
         </div>
