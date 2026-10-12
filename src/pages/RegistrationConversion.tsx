@@ -21,7 +21,7 @@ export default function RegistrationConversion() {
             <p className="story-eyebrow">Success story / 02</p>
             <h1>Doubling Registration Conversion</h1>
             <p className="story-deck">Four changes in four months, each measured on its own — and the one that worked was not the one we expected.</p>
-            <p className="story-eyebrow">edrone · Measured decisions</p>
+            <p className="story-eyebrow">edrone · Product-led growth</p>
           </header>
           <div className="story-body">
             <p>In January, the registration conversion rate at edrone was 6.5%. By April, it was 13%. Over those four months, we changed what the registration flow asked people to do — and how it explained why they should do it.</p>
@@ -74,7 +74,7 @@ export default function RegistrationConversion() {
             nextTitle="From Data Bottleneck to Company-Wide Access"
             nextSlug="eleven-out-of-170"
           />
-          <footer className="story-footer"><p className="story-eyebrow">edrone · measured decisions</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
+          <footer className="story-footer"><p className="story-eyebrow">edrone · product-led growth</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
         </article>
       </main>
     </div>

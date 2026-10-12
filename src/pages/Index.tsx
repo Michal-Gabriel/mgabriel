@@ -41,6 +41,18 @@ const STEPS = [
       "Your developers and PMs mentored into keeping it that way after I'm gone",
     ],
   },
+  {
+    num: "03",
+    title: "What the data is for",
+    meta: "ongoing · product analytics & experiments",
+    body: "Trustworthy numbers were never the point — decisions are. Once a figure is finally worth acting on, the work moves to the product: where people drop out, which change actually moved them, and what is worth keeping.",
+    points: [
+      "Activation, adoption and retention mapped across the journey — where users stop, and what that costs you",
+      "A/B experiments designed so the answer is readable, not merely significant",
+      "Metric definitions agreed before the experiment rather than argued after it",
+      "Eight years of this: product analytics across 13 markets at Docplanner, registration conversion from 6.5% to 13% at edrone",
+    ],
+  },
 ];
 
 const SKILLS = [
@@ -433,7 +445,7 @@ function About() {
           </FadeIn>
           <FadeIn delay={0.35}>
             <p>
-              So I fix the layer underneath, and — this is the part most people skip — I measure whether it worked. I also teach data analytics at{" "}
+              So I fix the layer underneath, and — this is the part most people skip — I measure whether it worked. Then I put it to use: product analytics, experiments, activation and retention — the half of the job that only becomes possible once the numbers hold. I spent three and a half years on that half at Docplanner, across 13 markets. I also teach data analytics at{" "}
               <a href="https://www.linkedin.com/school/mateacademy/" target="_blank" rel="noopener noreferrer" className="inline-link">Mate Academy</a>.
             </p>
           </FadeIn>
@@ -548,7 +560,7 @@ function HowIWork() {
 
       <FadeIn delay={0.1}>
         <p className="max-w-2xl mb-12 text-base md:text-lg leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-          Two steps, and the first one stands on its own. You find out where you are before you commit to anything larger.
+          Three steps. The first stands on its own — you find out where you are before committing to anything larger. The third is the reason for the first two.
         </p>
       </FadeIn>
 
@@ -706,7 +718,7 @@ function SuccessStories() {
           </a>
         </article>
         <article className="story-preview">
-          <p className="story-eyebrow">edrone · Measured decisions</p>
+          <p className="story-eyebrow">edrone · Product-led growth</p>
           <h3 className="text-2xl font-semibold mt-5 mb-5">Doubling Registration Conversion</h3>
           <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months, across four changes — each one measured on its own, so we knew which of them actually did the work.</p>
           <p className="text-slate-lightest leading-relaxed mt-4 mb-7">Removing friction worked first, then stopped working. The number pointed somewhere our instinct did not.</p>
