@@ -12,8 +12,8 @@ const NAV_ITEMS = [
 ];
 
 const PROOF = [
-  { before: "33%", after: "70%", label: "Business questions answered correctly, same AI" },
-  { before: "11",  after: "103", label: "People using company data each month, out of 170" },
+  { before: "33%", after: "70%", label: "Correct answers, same AI" },
+  { before: "11",  after: "103", label: "Monthly data users, out of 170" },
 ];
 
 const STEPS = [
@@ -158,52 +158,7 @@ const JOBS = [
   },
 ];
 
-const PROJECTS = [
-  {
-    title: "Product Analytics at Docplanner",
-    description:
-      "Led data-driven product decisions across 13 markets for the world's largest healthcare marketplace. Defined core metrics, built customer journey maps, and ran A/B experiments that measurably improved conversion and retention.",
-    tags: ["BigQuery", "SQL", "Python", "Mixpanel", "Amplitude", "AVO"],
-    links: [],
-  },
-  {
-    title: "+23% Registration Conversion",
-    description:
-      "As Interim PM, led an experiment-first initiative to move the SaaS product from freemium to premium. Designed and executed A/B tests that increased registration conversion rate by 23% within a single quarter.",
-    tags: ["A/B Testing", "VWO", "Product Management", "Funnel Analysis"],
-    links: [],
-  },
-  {
-    title: "ING Self-Employed Segment Analytics",
-    description:
-      "Built a comprehensive analytics system covering profitability, behavioural segmentation, and CRM effectiveness for ING Bank's Self-Employed Clients segment, enabling data-backed strategic decisions.",
-    tags: ["SAS", "SQL", "PowerBI", "Hadoop", "Python"],
-    links: [],
-  },
-  {
-    title: "Data Analytics Curriculum",
-    description:
-      "Designed and recorded a full Data Analytics course at Mate Academy to help career-changers break into IT, covering Tableau, Excel, Google Sheets, and statistical A/B testing fundamentals.",
-    tags: ["Tableau", "Excel", "Google Sheets", "A/B Testing", "Education"],
-    links: [],
-  },
-];
-
 // ── Icons ─────────────────────────────────────────────────────────────────────
-
-const IconFolder = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-teal">
-    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-  </svg>
-);
-
-const IconExternal = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-    <polyline points="15 3 21 3 21 9" />
-    <line x1="10" y1="14" x2="21" y2="3" />
-  </svg>
-);
 
 const IconLinkedIn = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -767,48 +722,6 @@ function SuccessStories() {
         </article>
         </div>
       </FadeIn>
-    </section>
-  );
-}
-
-// ── Work / Projects ───────────────────────────────────────────────────────────
-
-function Work() {
-  return (
-    <section id="work" className="py-24 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
-      <FadeIn>
-        <h2 className="numbered-heading">
-          <span className="section-number">03.</span> Some Things I've Done
-        </h2>
-      </FadeIn>
-
-      <div className="grid sm:grid-cols-2 gap-4">
-        {PROJECTS.map((p, i) => (
-          <FadeIn key={p.title} delay={i * 0.1}>
-            <div className="project-card">
-              <div className="flex items-start justify-between mb-6">
-                <IconFolder />
-                <div className="flex gap-3">
-                  <IconExternal />
-                </div>
-              </div>
-              <h3 className="text-lg font-medium mb-3 transition-colors duration-200 hover:text-teal" style={{ color: "hsl(var(--slate-lightest))" }}>
-                {p.title}
-              </h3>
-              <p className="text-sm leading-relaxed flex-1" style={{ color: "hsl(var(--slate))" }}>
-                {p.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-6">
-                {p.tags.map((tag) => (
-                  <span key={tag} className="font-mono text-xs" style={{ color: "hsl(var(--slate-light))" }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        ))}
-      </div>
     </section>
   );
 }
