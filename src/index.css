@@ -268,8 +268,8 @@ a:focus-visible { outline: 2px solid hsl(var(--teal)); outline-offset: 5px; }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 1.75rem;
-  margin-top: 2.5rem;
-  padding: 1.75rem 0 0;
+  margin-top: 1.5rem;
+  padding: 1.5rem 0 0;
   border-top: 1px solid hsl(var(--border));
   max-width: 44rem;
 }

@@ -406,11 +406,8 @@ function Hero() {
       <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-3xl md:text-5xl font-bold leading-tight mb-8" style={{ color: "hsl(var(--slate))" }}>
         Most companies have no idea how bad theirs is.
       </motion.h2>
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-2xl mb-5" style={{ color: "hsl(var(--slate))" }}>
-        I rebuild the layer underneath — one definition per business concept, one place where a number always means the same thing — and then I measure whether it worked. At edrone that moved the share of business questions answered correctly from 33% to 70%, and the number of people actually using company data from 11 to 103.
-      </motion.p>
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-2xl mb-2" style={{ color: "hsl(var(--slate))" }}>
-        Four to six weeks to find out where your data stands. Then, if it's worth it, a day or two a week to fix it and keep it fixed.
+      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-2" style={{ color: "hsl(var(--slate))" }}>
+        I rebuild the layer underneath, so a number means the same thing everywhere — then measure whether it worked. At edrone:
       </motion.p>
 
       <ProofBar />
