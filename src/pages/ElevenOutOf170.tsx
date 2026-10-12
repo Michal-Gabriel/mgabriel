@@ -1,4 +1,5 @@
 import DataArchitecture from "@/components/DataArchitecture";
+import StoryOutro from "@/components/StoryOutro";
 
 function Result({ before, after, label, detail }: { before: string; after: string; label: string; detail: string }) {
   return (
@@ -56,6 +57,12 @@ export default function ElevenOutOf170() {
             <blockquote>People hadn't stopped using data because they didn't need it. They stopped because it was harder than guessing.</blockquote>
             <p>Today a question about a number no longer routes through the data team. It routes through the person who needs the number — and comes back with an answer they can trust. That is the whole difference between data a company has and data a company uses.</p>
           </div>
+          <StoryOutro
+            heading="The same test, on your data"
+            lead="The 21 questions weren't special — they were the ones the company already asked itself. Running them against your data takes about four weeks, and the score tells you whether any of this applies to you."
+            nextTitle="Doubling Registration Conversion"
+            nextSlug="doubling-registration-conversion"
+          />
           <footer className="story-footer"><p className="story-eyebrow">edrone · data team</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
         </article>
       </main>
