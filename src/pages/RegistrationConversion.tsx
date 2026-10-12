@@ -1,3 +1,5 @@
+import StoryOutro from "@/components/StoryOutro";
+
 const milestones = [
   { month: "January", value: "6.5%", change: "Baseline", detail: "No changes", x: 75, y: 243 },
   { month: "February", value: "8.8%", change: "Remove the URL field", detail: "+35% vs. January", x: 275, y: 191 },
@@ -66,6 +68,12 @@ export default function RegistrationConversion() {
             <blockquote>Make it easier to register. Make it clearer why someone should.</blockquote>
             <p>Registration is only the start of activation. In this part of the journey, the result was concrete: the monthly conversion rate doubled while we simplified the flow and strengthened its value proposition.</p>
           </div>
+          <StoryOutro
+            heading="A decision is only as good as the number behind it"
+            lead="Every change here was settled by a number nobody argued about. That is not the normal case — in most companies the same question returns two different answers, and the experiment never gets resolved. Fixing that is the part I usually get called in for."
+            nextTitle="From Data Bottleneck to Company-Wide Access"
+            nextSlug="eleven-out-of-170"
+          />
           <footer className="story-footer"><p className="story-eyebrow">edrone · product-led growth</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
         </article>
       </main>
