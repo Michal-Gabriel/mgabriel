@@ -168,13 +168,6 @@ const IconLinkedIn = () => (
   </svg>
 );
 
-const IconMail = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect width="20" height="16" x="2" y="4" rx="2" />
-    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-  </svg>
-);
-
 // ── Fade-in wrapper ───────────────────────────────────────────────────────────
 
 function AnimatedItem({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -381,9 +374,6 @@ function Hero() {
           <a href="https://www.linkedin.com/in/mkgabriel" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
             <IconLinkedIn />
           </a>
-          <a href="mailto:michal.gabriel3@gmail.com" className="social-link" aria-label="Email">
-            <IconMail />
-          </a>
         </div>
         <div className="w-px h-24 mt-2" style={{ backgroundColor: "hsl(var(--slate))" }} />
       </motion.div>
@@ -396,11 +386,13 @@ function Hero() {
         className="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-5"
       >
         <a
-          href="mailto:michal.gabriel3@gmail.com"
+          href="https://www.linkedin.com/in/mkgabriel"
+          target="_blank"
+          rel="noopener noreferrer"
           className="social-link font-mono text-xs tracking-widest"
           style={{ writingMode: "vertical-rl" }}
         >
-          michal.gabriel3@gmail.com
+          linkedin.com/in/mkgabriel
         </a>
         <div className="w-px h-24 mt-2" style={{ backgroundColor: "hsl(var(--slate))" }} />
       </motion.div>
@@ -742,13 +734,9 @@ function Contact() {
           <p className="mb-10 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
             Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
           </p>
-          <a href="mailto:michal.gabriel3@gmail.com?subject=Data%20Trust%20Check" className="teal-btn text-base px-8 py-4">
+          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn text-base px-8 py-4">
             Say Hello
           </a>
-          <p className="mt-8 font-mono text-xs" style={{ color: "hsl(var(--slate))" }}>
-            or find me on{" "}
-            <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="inline-link">LinkedIn</a>
-          </p>
         </div>
       </FadeIn>
     </section>
@@ -762,7 +750,6 @@ function Footer() {
     <footer className="pb-8 text-center">
       <div className="flex justify-center gap-6 mb-6 md:hidden">
         <a href="https://www.linkedin.com/in/mkgabriel" target="_blank" rel="noopener noreferrer" className="social-link"><IconLinkedIn /></a>
-        <a href="mailto:michal.gabriel3@gmail.com" className="social-link"><IconMail /></a>
       </div>
     </footer>
   );

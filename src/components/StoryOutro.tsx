@@ -16,7 +16,7 @@ export default function StoryOutro({ heading, lead, nextTitle, nextSlug }: Story
 
       <div className="story-outro-actions">
         <a href={`${home}#how-i-work`} className="teal-btn">How I work</a>
-        <a href="mailto:michal.gabriel3@gmail.com?subject=Data%20Trust%20Check" className="ghost-btn">Email me</a>
+        <a href="https://www.linkedin.com/in/mkgabriel" target="_blank" rel="noopener noreferrer" className="ghost-btn">Message me</a>
       </div>
 
       <a href={`${home}success-stories/${nextSlug}/`} className="story-outro-next">
