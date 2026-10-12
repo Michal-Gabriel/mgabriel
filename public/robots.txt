@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://michal-gabriel.github.io/mgabriel/sitemap.xml
