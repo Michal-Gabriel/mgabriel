@@ -19,6 +19,8 @@ export default defineConfig(() => ({
         main: path.resolve(__dirname, "index.html"),
         registrationStory: path.resolve(__dirname, "success-stories/doubling-registration-conversion/index.html"),
         story: path.resolve(__dirname, "success-stories/eleven-out-of-170/index.html"),
+        onboardingStory: path.resolve(__dirname, "success-stories/self-service-onboarding/index.html"),
+        farmingStory: path.resolve(__dirname, "success-stories/automating-customer-success/index.html"),
       },
     },
   },
