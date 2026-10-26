@@ -702,6 +702,37 @@ function Experience() {
 
 // ── Success Stories ──────────────────────────────────────────────────────────
 
+const STORIES = [
+  {
+    eyebrow: "edrone · Data quality",
+    title: "From Data Bottleneck to Company-Wide Access",
+    lead: "A company of 170. A reporting tool only eleven people opened. In four months, data went from one team's resource to something more than half the company actually used.",
+    hook: "But getting people to open a dashboard wasn't the first problem we had to solve. The bigger one was invisible.",
+    slug: "eleven-out-of-170",
+  },
+  {
+    eyebrow: "edrone · Product-led growth",
+    title: "Doubling Registration Conversion",
+    lead: "From 6.5% to 13% in four months, across four changes — each one measured on its own, so we knew which of them actually did the work.",
+    hook: "Removing friction worked first, then stopped working. The number pointed somewhere our instinct did not.",
+    slug: "doubling-registration-conversion",
+  },
+  {
+    eyebrow: "Docplanner · Activation",
+    title: "Tripling Self-Service, and Keeping the Call Anyway",
+    lead: "Doctors completed the setup three times more often when no one was coming to help them. From 16% to 54%, by removing something rather than building something.",
+    hook: "The hypothesis held and the bar was still missed. What the product couldn't take over turned out to be the more useful finding.",
+    slug: "self-service-onboarding",
+  },
+  {
+    eyebrow: "Docplanner · Product automation",
+    title: "Fifteen Times the Reach of a Phone Call",
+    lead: "A third of the conversion rate of a human being, fifteen times the reach — and five times the result. Around €1M of customer success work the product took over.",
+    hook: "The whole decision turned on which number we were reading. And on being clear about where the people still won.",
+    slug: "automating-customer-success",
+  },
+];
+
 function SuccessStories() {
   return (
     <section id="success-stories" className="py-12 px-6 md:px-16 lg:px-32 max-w-7xl mx-auto">
@@ -710,41 +741,27 @@ function SuccessStories() {
           <span className="section-number">2.</span> Success Stories
         </h2>
         <div className="success-stories-grid">
-        <article className="story-preview">
-          <p className="story-eyebrow">edrone · Data quality</p>
-          <h3 className="text-2xl font-semibold mt-5 mb-5">From Data Bottleneck to Company-Wide Access</h3>
-          <p className="text-slate-light leading-relaxed">A company of 170. A reporting tool only eleven people opened. In four months, data went from one team's resource to something more than half the company actually used.</p>
-          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">But getting people to open a dashboard wasn't the first problem we had to solve. The bigger one was invisible.</p>
-          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/eleven-out-of-170/`}>
-            Read the full story <span aria-hidden="true">→</span>
-          </a>
-        </article>
-        <article className="story-preview">
-          <p className="story-eyebrow">edrone · Product-led growth</p>
-          <h3 className="text-2xl font-semibold mt-5 mb-5">Doubling Registration Conversion</h3>
-          <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months, across four changes — each one measured on its own, so we knew which of them actually did the work.</p>
-          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">Removing friction worked first, then stopped working. The number pointed somewhere our instinct did not.</p>
-          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/doubling-registration-conversion/`}>Read the full story <span aria-hidden="true">→</span></a>
-        </article>
-        <article className="story-preview">
-          <p className="story-eyebrow">Docplanner · Activation</p>
-          <h3 className="text-2xl font-semibold mt-5 mb-5">Tripling Self-Service, and Keeping the Call Anyway</h3>
-          <p className="text-slate-light leading-relaxed">Doctors completed the setup three times more often when no one was coming to help them. From 16% to 54%, by removing something rather than building something.</p>
-          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">The hypothesis held and the bar was still missed. What the product couldn't take over turned out to be the more useful finding.</p>
-          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/self-service-onboarding/`}>Read the full story <span aria-hidden="true">→</span></a>
-        </article>
-        <article className="story-preview">
-          <p className="story-eyebrow">Docplanner · Product automation</p>
-          <h3 className="text-2xl font-semibold mt-5 mb-5">Fifteen Times the Reach of a Phone Call</h3>
-          <p className="text-slate-light leading-relaxed">A third of the conversion rate of a human being, fifteen times the reach — and five times the result. Around €1M of customer success work the product took over.</p>
-          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">The whole decision turned on which number we were reading. And on being clear about where the people still won.</p>
-          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/automating-customer-success/`}>Read the full story <span aria-hidden="true">→</span></a>
-        </article>
+          {STORIES.map((story) => (
+            <article className="story-preview" key={story.slug}>
+              <div className="story-preview-head">
+                <p className="story-eyebrow">{story.eyebrow}</p>
+                <h3>{story.title}</h3>
+              </div>
+              <div className="story-preview-body">
+                <p className="text-slate-light leading-relaxed">{story.lead}</p>
+                <p className="text-slate-lightest leading-relaxed">{story.hook}</p>
+                <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/${story.slug}/`}>
+                  Read the full story <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </FadeIn>
     </section>
   );
 }
+
 
 // ── Contact ───────────────────────────────────────────────────────────────────
 
