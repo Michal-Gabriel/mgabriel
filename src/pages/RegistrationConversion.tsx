@@ -71,8 +71,8 @@ export default function RegistrationConversion() {
           <StoryOutro
             heading="A decision is only as good as the number behind it"
             lead="Every change here was settled by a number nobody argued about. That is not the normal case — in most companies the same question returns two different answers, and the experiment never gets resolved. Fixing that is the part I usually get called in for."
-            nextTitle="From Data Bottleneck to Company-Wide Access"
-            nextSlug="eleven-out-of-170"
+            nextTitle="Tripling Self-Service, and Keeping the Call Anyway"
+            nextSlug="self-service-onboarding"
           />
           <footer className="story-footer"><p className="story-eyebrow">edrone · product-led growth</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
         </article>

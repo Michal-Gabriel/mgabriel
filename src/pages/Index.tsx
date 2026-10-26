@@ -95,6 +95,8 @@ const JOBS = [
           "Docplanner is one of Poland's first unicorns — the world's largest healthcare marketplace, in 13 countries, serving 90M+ patients a month.",
           "Worked with product directors and PMs on strategy and KPIs, and on keeping one metric meaning one thing across teams.",
           "Designed and read A/B experiments on adoption, retention and monetisation.",
+          "Mapped and ranked what Customer Success did for doctors, then shaped and measured the hint engine that took the simple half over: 15x the reach of the team, 5x the conversions, around €1M of workload.",
+          "Ran the onboarding experiment that removed the CS call. Self-service setup went from 16% to 54% — and the quality drop underneath it is why the meeting stayed.",
           "Paired the numbers with user research, so a hypothesis had to survive both.",
         ],
       },
@@ -148,8 +150,8 @@ const JOBS = [
         title: "Data Analytics Instructor",
         period: "Apr 2025 – Present",
         bullets: [
-          "Build the Data Analytics course for people changing careers into IT.",
-          "Record the video modules: Tableau, Excel, Google Sheets and A/B testing.",
+          "Teach A/B testing and product analytics to people with no technical background — translating experiment design and metrics into language a non-analyst can act on.",
+          "Built the Data Analytics course for people changing careers into IT, and recorded its video modules: Tableau, Excel and Google Sheets.",
         ],
       },
     ],
@@ -723,6 +725,20 @@ function SuccessStories() {
           <p className="text-slate-light leading-relaxed">From 6.5% to 13% in four months, across four changes — each one measured on its own, so we knew which of them actually did the work.</p>
           <p className="text-slate-lightest leading-relaxed mt-4 mb-7">Removing friction worked first, then stopped working. The number pointed somewhere our instinct did not.</p>
           <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/doubling-registration-conversion/`}>Read the full story <span aria-hidden="true">→</span></a>
+        </article>
+        <article className="story-preview">
+          <p className="story-eyebrow">Docplanner · Activation</p>
+          <h3 className="text-2xl font-semibold mt-5 mb-5">Tripling Self-Service, and Keeping the Call Anyway</h3>
+          <p className="text-slate-light leading-relaxed">Doctors completed the setup three times more often when no one was coming to help them. From 16% to 54%, by removing something rather than building something.</p>
+          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">The hypothesis held and the bar was still missed. What the product couldn't take over turned out to be the more useful finding.</p>
+          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/self-service-onboarding/`}>Read the full story <span aria-hidden="true">→</span></a>
+        </article>
+        <article className="story-preview">
+          <p className="story-eyebrow">Docplanner · Product automation</p>
+          <h3 className="text-2xl font-semibold mt-5 mb-5">Fifteen Times the Reach of a Phone Call</h3>
+          <p className="text-slate-light leading-relaxed">A third of the conversion rate of a human being, fifteen times the reach — and five times the result. Around €1M of customer success work the product took over.</p>
+          <p className="text-slate-lightest leading-relaxed mt-4 mb-7">The whole decision turned on which number we were reading. And on being clear about where the people still won.</p>
+          <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/automating-customer-success/`}>Read the full story <span aria-hidden="true">→</span></a>
         </article>
         </div>
       </FadeIn>
