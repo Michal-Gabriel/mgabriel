@@ -14,6 +14,8 @@ export default {
     },
     extend: {
       colors: {
+        /* The accent, so `bg-teal` and `hover:bg-teal/10` resolve to the gold. */
+        teal: "hsl(var(--teal) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

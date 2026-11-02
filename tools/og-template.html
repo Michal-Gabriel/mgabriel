@@ -4,14 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1200, initial-scale=1">
 <title>Open Graph image template — Michał Gabriel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:220 43% 11%;--teal:166 100% 70%;--slate-lightest:218 27% 84%;--slate-light:218 22% 67%;--border:220 30% 18%}
-*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{background:hsl(var(--navy));color:hsl(var(--slate-lightest));font-family:Inter,-apple-system,system-ui,sans-serif}main{width:1200px;height:630px;padding:64px 72px;display:flex;flex-direction:column;border-top:8px solid hsl(var(--teal))}.eyebrow,footer{font-family:monospace;color:hsl(var(--teal));font-size:20px;letter-spacing:2px}h1{font-size:64px;letter-spacing:-2px;line-height:1.12;margin:36px 0 20px;max-width:1050px}p{font-size:32px;color:hsl(var(--slate-light));margin:0}.metrics{font-size:34px;color:hsl(var(--teal));margin-top:auto;padding:24px 0;border-top:1px solid hsl(var(--border));font-weight:600}footer{font-size:17px;letter-spacing:0}
+:root{--paper:38 32% 95%;--bronze:34 58% 36%;--ink:28 14% 12%;--ink-soft:30 9% 29%;--muted:32 7% 44%;--line:34 16% 83%}
+*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:hsl(var(--paper));background-image:radial-gradient(900px 420px at 50% -120px,hsl(44 60% 98% / .9),transparent 70%);color:hsl(var(--ink));font-family:Inter,-apple-system,system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+main{width:1200px;height:630px;padding:68px 78px;display:flex;flex-direction:column;border-top:1px solid hsl(var(--bronze))}
+.eyebrow,footer{font-size:18px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:hsl(var(--bronze))}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:78px;letter-spacing:-1.5px;line-height:1.06;margin:40px 0 24px;max-width:1040px;color:hsl(var(--ink))}
+p{font-size:28px;color:hsl(var(--ink-soft));margin:0;font-weight:300}
+.metrics{font-family:'Cormorant Garamond',Georgia,serif;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;font-size:46px;font-weight:500;letter-spacing:-1px;color:hsl(var(--bronze));margin-top:auto;padding:28px 0 0;border-top:1px solid hsl(var(--line))}
+footer{font-size:15px;letter-spacing:3px;color:hsl(var(--muted));margin-top:18px}
 </style>
 </head>
 <body><main>
 <div class="eyebrow" id="eyebrow">FRACTIONAL HEAD OF DATA</div>
-<h1 id="headline">AI answers only as well as the data beneath it.</h1>
+<h1 id="headline">Ask the same question twice. Get two different answers.</h1>
 <p id="subtitle">Michał Gabriel · Fractional Head of Data</p>
 <div class="metrics" id="metrics">33% → 70% · 11 → 103</div>
 <footer>michal-gabriel.github.io/mgabriel</footer>

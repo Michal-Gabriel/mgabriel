@@ -7,52 +7,12 @@ const NAV_ITEMS = [
   { label: "About",           num: "1", href: "#about" },
   { label: "Success Stories", num: "2", href: "#success-stories" },
   { label: "Experience",      num: "3", href: "#experience" },
-  { label: "How I Work",      num: "4", href: "#how-i-work" },
-  { label: "Contact",         num: "5", href: "#contact" },
+  { label: "Contact",         num: "4", href: "#contact" },
 ];
 
 const PROOF = [
-  { before: "33%", after: "70%", label: "Correct answers, same AI" },
-  { before: "11",  after: "103", label: "Monthly data users, out of 170" },
-];
-
-const STEPS = [
-  {
-    num: "01",
-    title: "Data Trust Check",
-    meta: "4–6 weeks · fixed price · stands on its own",
-    body: "We take 20–30 questions your business actually asks — the ones you already know the right answers to — and run them against your data as it is today. You get a score. Then the map that explains the score.",
-    points: [
-      "An evaluation set of 20–30 real business questions, scored against your current data",
-      "A map of the competing tables: which number people are reading, and which one is right",
-      "A gold-layer plan — one definition per business concept, each with an owner",
-      "Scope, sequence and cost of fixing it, so you can decide with a number in hand",
-    ],
-  },
-  {
-    num: "02",
-    title: "The ongoing seat",
-    meta: "1–2 days a week · fractional Head of Data",
-    body: "A company of 30–150 rarely needs a Head of Data on payroll. It needs someone who sets the architecture once and then keeps it from drifting back — because it will drift back. That part is a role, not a project.",
-    points: [
-      "The gold layer built and owned: one place where a number always means the same thing",
-      "Access opened past the data team — and adoption measured, not assumed",
-      "The same evaluation set re-run each quarter, so the score is something your board can read",
-      "Your developers and PMs mentored into keeping it that way after I'm gone",
-    ],
-  },
-  {
-    num: "03",
-    title: "What the data is for",
-    meta: "ongoing · product analytics & experiments",
-    body: "Trustworthy numbers were never the point — decisions are. Once a figure is finally worth acting on, the work moves to the product: where people drop out, which change actually moved them, and what is worth keeping.",
-    points: [
-      "Activation, adoption and retention mapped across the journey — where users stop, and what that costs you",
-      "A/B experiments designed so the answer is readable, not merely significant",
-      "Metric definitions agreed before the experiment rather than argued after it",
-      "Eight years of this: product analytics across 13 markets at Docplanner, registration conversion from 6.5% to 13% at edrone",
-    ],
-  },
+  { before: "33%", after: "70%", label: "Business questions answered correctly" },
+  { before: "11",  after: "103", label: "People using data each month, out of 170" },
 ];
 
 const SKILLS = [
@@ -188,9 +148,9 @@ function AnimatedItem({ children, delay = 0, className = "" }: { children: React
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -201,10 +161,10 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 1, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -235,26 +195,28 @@ function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 flex items-center justify-between"
+        className="fixed top-0 left-0 right-0 z-50"
         style={{
-          height: scrolled ? "60px" : "80px",
-          backgroundColor: scrolled ? `hsl(220 43% 11% / 0.95)` : "transparent",
-          backdropFilter: scrolled ? "blur(10px)" : "none",
-          boxShadow: scrolled ? "0 10px 30px -10px hsl(220 43% 5% / 0.7)" : "none",
-          transition: "height 0.3s, background-color 0.3s, box-shadow 0.3s",
+          height: scrolled ? "68px" : "96px",
+          backgroundColor: scrolled ? "hsl(var(--surface) / 0.86)" : "transparent",
+          backdropFilter: scrolled ? "blur(14px) saturate(140%)" : "none",
+          borderBottom: scrolled ? "1px solid hsl(var(--rule))" : "1px solid transparent",
+          transition: "height 0.4s, background-color 0.4s, border-color 0.4s",
         }}
       >
+        <div className="w-full h-full px-6 md:px-10 lg:px-14 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="relative flex items-center justify-center w-10 h-10 border border-teal rounded text-teal font-mono text-lg font-bold transition-all duration-200 hover:bg-teal/10"
+          className="relative flex items-center justify-center w-11 h-11 border text-teal font-display text-xl transition-all duration-300 hover:bg-teal/10"
+          style={{ borderColor: "hsl(var(--bronze) / 0.55)", borderRadius: "1px", letterSpacing: "0.06em" }}
         >
           MG
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {NAV_ITEMS.map((item, i) => (
             <motion.button
               key={item.label}
@@ -283,14 +245,15 @@ function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 z-50"
+          className="lg:hidden flex flex-col gap-2 p-2 z-50"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          <span className={`block w-6 h-0.5 bg-teal transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-teal transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-teal transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-7 h-px bg-teal transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-7 h-px bg-teal transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-7 h-px bg-teal transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
+        </div>
       </motion.header>
 
       {/* Mobile menu */}
@@ -302,16 +265,16 @@ function Navbar() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center"
-            style={{ backgroundColor: "hsl(222 41% 14%)" }}
+            style={{ backgroundColor: "hsl(var(--surface))" }}
           >
             <nav className="flex flex-col items-center gap-8">
               {NAV_ITEMS.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollTo(item.href)}
-                  className="flex flex-col items-center gap-1 text-slate-lightest text-xl"
+                  className="flex flex-col items-center gap-2 text-slate-lightest font-display text-3xl"
                 >
-                  <span className="font-mono text-teal text-sm">{item.num}.</span>
+                  <span className="label text-teal">{item.num}</span>
                   {item.label}
                 </button>
               ))}
@@ -338,7 +301,7 @@ function ProofBar() {
     <motion.dl
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.7, duration: 0.5 }}
+      transition={{ delay: 1.05, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
       className="proof-bar"
     >
       {PROOF.map((p) => (
@@ -358,19 +321,20 @@ function ProofBar() {
 function Hero() {
   return (
     <section
-      className="flex flex-col justify-center px-6 pt-28 pb-12 md:px-16 md:pt-32 md:pb-16 lg:px-32 max-w-5xl mx-auto"
+      className="flex flex-col justify-center px-6 pt-32 pb-9 md:px-16 md:pt-40 md:pb-16 lg:px-32 max-w-5xl mx-auto"
     >
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }} className="font-mono text-teal mb-5 text-sm md:text-base">
+      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="label text-teal mb-8 flex items-center gap-4">
+        <span className="inline-block w-10 h-px" style={{ backgroundColor: "hsl(var(--bronze) / 0.7)" }} aria-hidden="true" />
         Michał Gabriel · Fractional Head of Data
       </motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-4xl md:text-6xl font-bold text-slate-lightest leading-tight mb-3">
-        AI answers only as well as the data beneath it.
+      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-3xl md:text-[2.9rem] lg:text-[3.2rem] text-slate-lightest mb-4" style={{ fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.025em" }}>
+        Ask the same question twice. Get two different answers.
       </motion.h1>
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="text-3xl md:text-5xl font-bold leading-tight mb-8" style={{ color: "hsl(var(--slate))" }}>
-        Most companies have no idea how bad theirs is.
+      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-xl md:text-[1.95rem] lg:text-[2.15rem] mb-10" style={{ color: "hsl(var(--text-muted))", fontWeight: 300, fontStyle: "italic", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+        Until that stops, every decision is a guess with a chart attached.
       </motion.h2>
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }} className="text-base md:text-lg leading-relaxed max-w-xl mb-2" style={{ color: "hsl(var(--slate))" }}>
-        I rebuild the layer underneath, so a number means the same thing everywhere — then measure whether it worked. At edrone:
+      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="text-base md:text-lg max-w-2xl mb-2" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
+        I rebuild what sits under the reports, so one figure means one thing across the company — then prove it, by putting the same questions to the same AI before and after. At edrone:
       </motion.p>
 
       <ProofBar />
@@ -392,24 +356,6 @@ function Hero() {
         <div className="w-px h-24 mt-2" style={{ backgroundColor: "hsl(var(--slate))" }} />
       </motion.div>
 
-      {/* Email sidebar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="hidden md:flex fixed right-8 bottom-0 flex-col items-center gap-5"
-      >
-        <a
-          href="https://www.linkedin.com/in/mkgabriel"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-link font-mono text-xs tracking-widest"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          linkedin.com/in/mkgabriel
-        </a>
-        <div className="w-px h-24 mt-2" style={{ backgroundColor: "hsl(var(--slate))" }} />
-      </motion.div>
     </section>
   );
 }
@@ -418,15 +364,15 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="pt-12 pb-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="about" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">1.</span> About Me
         </h2>
       </FadeIn>
 
-      <div className="grid md:grid-cols-5 gap-12 items-start">
-        <div className="md:col-span-3 space-y-4 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
+      <div className="grid md:grid-cols-5 gap-10 items-start">
+        <div className="md:col-span-3 space-y-5 text-base leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
           <FadeIn delay={0.1}>
             <p>
               Eight years of making data usable. I started at{" "}
@@ -453,27 +399,23 @@ function About() {
           </FadeIn>
           <FadeIn delay={0.4}>
             <p>Tools I work with day to day:</p>
-            <ul className="grid grid-cols-2 gap-1 mt-4 skill-list">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-1 mt-4 skill-list">
               {SKILLS.map((s) => <li key={s}>{s}</li>)}
             </ul>
           </FadeIn>
         </div>
 
         {/* Profile image */}
-        <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end">
-          <div className="relative w-56 h-56 md:w-64 md:h-64 group">
+        <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end md:pt-2">
+          <div className="portrait relative w-60 h-72 md:w-full md:max-w-[19rem] md:h-auto md:aspect-[3/4] group">
             <div
-              className="absolute inset-0 rounded border-2 border-teal translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3"
-              style={{ zIndex: 0 }}
+              className="absolute inset-0 translate-x-5 translate-y-5 transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3"
+              style={{ zIndex: 0, border: "1px solid hsl(var(--bronze) / 0.65)", borderRadius: "1px" }}
             />
             <div
-              className="relative w-full h-full rounded overflow-hidden"
-              style={{ zIndex: 1, backgroundColor: "hsl(var(--navy-lighter))" }}
+              className="relative w-full h-full overflow-hidden"
+              style={{ zIndex: 1, backgroundColor: "hsl(var(--surface-raised))", borderRadius: "1px", boxShadow: "0 36px 70px -48px hsl(30 25% 35% / 0.5)" }}
             >
-              <div
-                className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0"
-                style={{ backgroundColor: "hsl(var(--teal) / 0.2)" }}
-              />
               <picture>
                 <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}profile-512.webp`} />
               <img
@@ -490,114 +432,6 @@ function About() {
           </div>
         </FadeIn>
       </div>
-    </section>
-  );
-}
-
-// ── How I Work ────────────────────────────────────────────────────────────────
-
-const EVAL_SAMPLE = [
-  { q: "How many active customers did we have last month?",   before: false, after: true  },
-  { q: "What was MRR in Q2 — and does finance agree?",         before: false, after: true  },
-  { q: "Which plan do customers churn from most?",             before: true,  after: true  },
-  { q: "How many orders came through the mobile app?",         before: false, after: true  },
-  { q: "What did we spend to acquire a customer in Q2?",       before: false, after: false },
-];
-
-function Mark({ ok }: { ok: boolean }) {
-  return (
-    <span className={ok ? "eval-yes" : "eval-no"} role="img" aria-label={ok ? "correct" : "wrong"}>
-      {ok ? "✓" : "✗"}
-    </span>
-  );
-}
-
-function EvalSample() {
-  const before = EVAL_SAMPLE.filter((r) => r.before).length;
-  const after = EVAL_SAMPLE.filter((r) => r.after).length;
-
-  return (
-    <figure className="eval-sample">
-      <figcaption className="eval-sample-head">What the scored set looks like</figcaption>
-      <table className="eval-table">
-        <thead>
-          <tr>
-            <th scope="col">Question</th>
-            <th scope="col">Before</th>
-            <th scope="col">After</th>
-          </tr>
-        </thead>
-        <tbody>
-          {EVAL_SAMPLE.map((row) => (
-            <tr key={row.q}>
-              <th scope="row">{row.q}</th>
-              <td><Mark ok={row.before} /></td>
-              <td><Mark ok={row.after} /></td>
-            </tr>
-          ))}
-          <tr className="eval-total">
-            <th scope="row">Answered correctly</th>
-            <td>{before}/{EVAL_SAMPLE.length}</td>
-            <td>{after}/{EVAL_SAMPLE.length}</td>
-          </tr>
-        </tbody>
-      </table>
-      <p className="eval-note">
-        Illustrative. Your set is built from questions your business already asks and already knows
-        the answers to. Some come back right the first time. Some stay broken after the first pass —
-        and then at least you know which.
-      </p>
-    </figure>
-  );
-}
-
-function HowIWork() {
-  return (
-    <section id="how-i-work" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
-      <FadeIn>
-        <h2 className="numbered-heading">
-          <span className="section-number">4.</span> How I Work
-        </h2>
-      </FadeIn>
-
-      <FadeIn delay={0.1}>
-        <p className="max-w-2xl mb-12 text-base md:text-lg leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-          Three steps. The first stands on its own — you find out where you are before committing to anything larger. The third is the reason for the first two.
-        </p>
-      </FadeIn>
-
-      <div className="space-y-6">
-        {STEPS.map((step, i) => (
-          <FadeIn key={step.title} delay={0.15 + i * 0.1}>
-            <article className="step">
-              <header className="step-head">
-                <span className="step-num">{step.num}</span>
-                <div>
-                  <h3 className="step-title">{step.title}</h3>
-                  <p className="step-meta">{step.meta}</p>
-                </div>
-              </header>
-              <p className="step-body">{step.body}</p>
-              <ul className="step-list">
-                {step.points.map((p) => (
-                  <li key={p}>
-                    <span className="text-teal shrink-0" aria-hidden="true">▹</span>
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-              {i === 0 && <EvalSample />}
-            </article>
-          </FadeIn>
-        ))}
-      </div>
-
-      <FadeIn delay={0.4}>
-        <p className="availability-note">
-          If the first score comes back high, you don't need the second step — and I'll say so.
-          I'm currently Data Lead at edrone and take a limited number of outside engagements.
-        </p>
-      </FadeIn>
     </section>
   );
 }
@@ -633,7 +467,7 @@ function Experience() {
   };
 
   return (
-    <section id="experience" className="py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="experience" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">3.</span> Where I've Worked
@@ -642,7 +476,7 @@ function Experience() {
 
       <FadeIn delay={0.1} className="flex flex-col sm:flex-row gap-0">
         {/* Tab list */}
-        <div role="tablist" aria-label="Companies" aria-orientation={verticalTabs ? "vertical" : "horizontal"} onKeyDown={onTabKeyDown} className="flex sm:flex-col overflow-x-auto sm:overflow-x-visible sm:min-w-[160px] border-b sm:border-b-0 sm:border-l-0" style={{ borderColor: "hsl(var(--navy-lighter))" }}>
+        <div role="tablist" aria-label="Companies" aria-orientation={verticalTabs ? "vertical" : "horizontal"} onKeyDown={onTabKeyDown} className="flex sm:flex-col overflow-x-auto sm:overflow-x-visible sm:min-w-[150px] border-b sm:border-b-0 sm:border-l-0" style={{ borderColor: "hsl(var(--navy-lighter))" }}>
           {JOBS.map((j, i) => (
             <button
               key={j.company}
@@ -671,21 +505,21 @@ function Experience() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -10 }}
             transition={{ duration: 0.2 }}
-            className="flex-1 sm:pl-8 pt-4 sm:pt-0"
+            className="flex-1 sm:pl-10 pt-4 sm:pt-0"
           >
             <div className="space-y-10">
               {job.roles.map((role) => (
                 <div key={`${job.company}-${role.title}`}>
-                  <h3 className="text-xl font-medium" style={{ color: "hsl(var(--slate-lightest))" }}>
+                  <h3 className="font-display text-3xl" style={{ color: "hsl(var(--text-strong))", fontWeight: 400, letterSpacing: "-0.015em" }}>
                     {role.title}
                   </h3>
-                  <p className="font-mono text-sm mt-1 mb-5" style={{ color: "hsl(var(--slate))" }}>
+                  <p className="label mt-3 mb-6" style={{ color: "hsl(var(--text-muted))" }}>
                     {role.period}
                   </p>
                   <ul className="space-y-3">
                     {role.bullets.map((b) => (
-                      <li key={b} className="flex gap-3 text-sm leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
-                        <span className="text-teal mt-0.5 shrink-0">▹</span>
+                      <li key={b} className="flex gap-4 text-sm" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.85 }}>
+                        <span className="rule-bullet" aria-hidden="true" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -735,26 +569,31 @@ const STORIES = [
 
 function SuccessStories() {
   return (
-    <section id="success-stories" className="py-12 px-6 md:px-16 lg:px-32 max-w-7xl mx-auto">
+    <section id="success-stories" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">2.</span> Success Stories
         </h2>
         <div className="success-stories-grid">
-          {STORIES.map((story) => (
-            <article className="story-preview" key={story.slug}>
-              <div className="story-preview-head">
-                <p className="story-eyebrow">{story.eyebrow}</p>
-                <h3>{story.title}</h3>
-              </div>
-              <div className="story-preview-body">
-                <p className="text-slate-light leading-relaxed">{story.lead}</p>
-                <p className="text-slate-lightest leading-relaxed">{story.hook}</p>
-                <a className="teal-btn inline-flex items-center gap-4" href={`${import.meta.env.BASE_URL}success-stories/${story.slug}/`}>
-                  Read the full story <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </article>
+          {STORIES.map((story, i) => (
+            <FadeIn key={story.slug} delay={i * 0.08}>
+              <article className="story-preview">
+                <div className="story-preview-head">
+                  <div className="story-meta">
+                    <span className="story-index" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                    <p className="story-eyebrow">{story.eyebrow}</p>
+                  </div>
+                  <h3>{story.title}</h3>
+                </div>
+                <div className="story-preview-body">
+                  <p className="text-slate-light">{story.lead}</p>
+                  <p className="text-slate-lightest">{story.hook}</p>
+                  <a className="read-link" href={`${import.meta.env.BASE_URL}success-stories/${story.slug}/`}>
+                    Read the full story <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+            </FadeIn>
           ))}
         </div>
       </FadeIn>
@@ -767,19 +606,19 @@ function SuccessStories() {
 
 function Contact() {
   return (
-    <section id="contact" className="pt-12 pb-24 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="contact" className="pt-9 md:pt-16 pb-20 md:pb-28 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">5.</span> What's Next?
+          <span className="section-number">4.</span> What's Next?
         </h2>
-        <div className="max-w-xl mx-auto text-center">
-          <h3 className="text-5xl font-bold mb-6" style={{ color: "hsl(var(--slate-lightest))" }}>
+        <div className="max-w-2xl">
+          <h3 className="font-display text-4xl md:text-5xl mb-8" style={{ color: "hsl(var(--text-strong))", fontWeight: 400, letterSpacing: "-0.025em" }}>
             Get In Touch
           </h3>
-          <p className="mb-10 leading-relaxed" style={{ color: "hsl(var(--slate))" }}>
+          <p className="mb-12" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
             Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
           </p>
-          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn text-base px-8 py-4">
+          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn px-10 py-4">
             Say Hello
           </a>
         </div>
@@ -816,7 +655,6 @@ export default function Index() {
         <About />
         <SuccessStories />
         <Experience />
-        <HowIWork />
         <Contact />
       </main>
       <Footer />

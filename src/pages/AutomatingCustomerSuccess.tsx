@@ -21,8 +21,8 @@ export default function AutomatingCustomerSuccess() {
   return (
     <div className="min-h-screen bg-navy">
       <header className="story-nav">
-        <a href={home} className="text-teal font-mono font-bold text-lg" aria-label="Michał Gabriel — home">MG</a>
-        <a href={`${home}#success-stories`} className="inline-link font-mono text-xs">← All success stories</a>
+        <a href={home} className="text-teal font-display text-xl" style={{ letterSpacing: "0.06em" }} aria-label="Michał Gabriel — home">MG</a>
+        <a href={`${home}#success-stories`} className="inline-link label">← All success stories</a>
       </header>
       <main className="story-main">
         <article>
