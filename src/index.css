@@ -329,6 +329,8 @@
 /* A gold rule draws itself across the entry on hover. */
 .story-preview::before { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: hsl(var(--bronze)); transition: width 1s cubic-bezier(0.22, 1, 0.36, 1); }
 .story-preview:hover::before { width: 100%; }
+.success-stories-grid > *:last-child .story-preview { border-bottom: 0; padding-bottom: 0; }
+.success-stories-grid > *:last-child .story-preview::before { display: none; }
 .story-eyebrow { font-family: var(--font-body); font-weight: 500; font-size: 0.68rem; line-height: 1.4; letter-spacing: 0.22em; text-transform: uppercase; color: hsl(var(--bronze)); }
 .story-nav { max-width: 1040px; margin: auto; padding: 2.5rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .story-main { max-width: 760px; margin: auto; padding: 3rem 1.5rem 6rem; }

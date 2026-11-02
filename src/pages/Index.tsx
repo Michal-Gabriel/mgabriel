@@ -569,7 +569,7 @@ const STORIES = [
 
 function SuccessStories() {
   return (
-    <section id="success-stories" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="success-stories" className="py-9 md:py-16 pb-16 md:pb-[5.75rem] px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">2.</span> Success Stories
@@ -611,13 +611,13 @@ function Contact() {
         <h2 className="numbered-heading">
           <span className="section-number">4.</span> What's Next?
         </h2>
-        <div className="max-w-2xl">
-          <h3 className="font-display text-4xl md:text-5xl mb-8" style={{ color: "hsl(var(--text-strong))", fontWeight: 400, letterSpacing: "-0.025em" }}>
-            Get In Touch
-          </h3>
-          <p className="mb-12" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
-            Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
-          </p>
+        <h3 className="font-display text-4xl md:text-5xl mb-8 max-w-2xl" style={{ color: "hsl(var(--text-strong))", fontWeight: 400, letterSpacing: "-0.025em" }}>
+          Get In Touch
+        </h3>
+        <p className="mb-12 max-w-2xl" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
+          Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
+        </p>
+        <div className="flex justify-center">
           <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn px-10 py-4">
             Say Hello
           </a>
