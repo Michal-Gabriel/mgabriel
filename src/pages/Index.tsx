@@ -39,6 +39,7 @@ const JOBS = [
           "Rebuilt the architecture into a gold layer — one definition per business concept. Correct answers to a fixed set of business questions went from 33% to 70%.",
           "Moved reporting off Tableau onto a tool we built, open to anyone in the company. Monthly users went from 11 to 103, out of 170 people.",
           "Run the product-led growth work: finding where activation, adoption and retention break, and turning that into experiments.",
+          "Doubled registration conversion, from 6.5% to 13% in four months, across four changes measured one at a time — so we knew which of them did the work.",
           "Teach developers, designers and team leads to agree on a success metric before they build, and to check it afterwards.",
         ],
       },

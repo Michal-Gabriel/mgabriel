@@ -27,7 +27,7 @@ export default function SelfServiceOnboarding() {
           </header>
           <div className="story-body">
             <p>Every new doctor at Docplanner was onboarded by a person. Customer Success booked a call, walked them through the setup, and made sure the profile, the calendar and the pricing were in place. It worked. It also didn't scale, and it was the single largest cost in getting a doctor live.</p>
-            <p>We had self-service tools for exactly this — an Onboarding Wizard, a Start Guide, contextual hints. Almost nobody used them. The Wizard was completed by 18% of doctors. The Start Guide, by 2%.</p>
+            <p>We had self-service tools for exactly this — an Onboarding Wizard, a Start Guide, contextual hints. Almost nobody used them. The Wizard was completed by 18% of doctors, the Start Guide by 2% — and inside the fourteen-day window the experiment would go on to measure, Wizard completion sat at 16%.</p>
 
             <h2>The common reading was that the tools were bad</h2>
             <p>That is the obvious conclusion, and it leads somewhere expensive: redesign the Wizard, rewrite the Start Guide, ship it again, hope.</p>
@@ -40,7 +40,7 @@ export default function SelfServiceOnboarding() {
 
             <h2>The hypothesis held</h2>
             <p>In the self-service group, 61% of doctors started the Wizard, and 88% of those finished the whole flow.</p>
-            <Result before="16%" after="54%" label="Completed the Onboarding Wizard" detail="Control group against self-service group, measured on day 14" />
+            <Result before="16%" after="54%" label="Completed the Onboarding Wizard" detail="Control group against self-service group, both measured on day 14" />
             <p>More than three times as many doctors completed the setup when there was no call coming. The call really had been suppressing the tools — people weren't ignoring them, they were waiting.</p>
 
             <h2>And the bar was still missed</h2>

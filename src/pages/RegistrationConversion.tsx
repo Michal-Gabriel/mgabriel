@@ -49,11 +49,11 @@ export default function RegistrationConversion() {
                 <svg viewBox="0 0 750 440" className="conversion-chart" role="img" aria-labelledby="conversion-title conversion-desc">
                   <title id="conversion-title">Registration conversion doubled from January to April</title>
                   <desc id="conversion-desc">January: 6.5 percent. February: 8.8 percent after removing the URL field. March: 9 percent after removing the phone field and splitting registration into two steps. April: 13 percent after adding a value proposition. The vertical scale starts at zero.</desc>
-                  <defs><linearGradient id="conversion-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stopColor="#66ffd9" stopOpacity="0.18" /><stop offset="100%" stopColor="#66ffd9" stopOpacity="0.01" /></linearGradient></defs>
-                  {[0, 5, 10, 15].map(value => <g key={value}><line x1="60" x2="700" y1={390 - value * (340 / 15)} y2={390 - value * (340 / 15)} stroke="#293449" /><text x="45" y={395 - value * (340 / 15)} textAnchor="end" fill="#a6b4c8" fontSize="12">{value}%</text></g>)}
+                  <defs><linearGradient id="conversion-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stopColor="hsl(var(--bronze))" stopOpacity="0.14" /><stop offset="100%" stopColor="hsl(var(--bronze))" stopOpacity="0.01" /></linearGradient></defs>
+                  {[0, 5, 10, 15].map(value => <g key={value}><line x1="60" x2="700" y1={390 - value * (340 / 15)} y2={390 - value * (340 / 15)} stroke="hsl(var(--rule))" /><text x="45" y={395 - value * (340 / 15)} textAnchor="end" fill="hsl(var(--text-muted))" fontSize="12">{value}%</text></g>)}
                   <path d="M75 243 L275 191 L475 186 L675 95 L675 390 L75 390 Z" fill="url(#conversion-fill)" />
-                  <path d="M75 243 L275 191 L475 186 L675 95" stroke="#66ffd9" strokeWidth="3" fill="none" />
-                  {milestones.map(step => <g key={step.month}><circle cx={step.x} cy={step.y} r="6" fill="#66ffd9" stroke="#142033" strokeWidth="3" /><text x={step.x} y={step.y - 19} textAnchor="middle" fill="#66ffd9" fontSize="18" fontWeight="600">{step.value}</text><text x={step.x} y="423" textAnchor="middle" fill="#a6b4c8" fontSize="12">{step.month}</text></g>)}
+                  <path d="M75 243 L275 191 L475 186 L675 95" stroke="hsl(var(--bronze))" strokeWidth="2" fill="none" />
+                  {milestones.map(step => <g key={step.month}><circle cx={step.x} cy={step.y} r="6" fill="hsl(var(--bronze))" stroke="hsl(var(--surface-raised))" strokeWidth="3" /><text x={step.x} y={step.y - 19} textAnchor="middle" fill="hsl(var(--bronze))" fontSize="19" fontWeight="500" fontFamily="var(--font-display)">{step.value}</text><text x={step.x} y="423" textAnchor="middle" fill="hsl(var(--text-muted))" fontSize="12">{step.month}</text></g>)}
                 </svg>
               </div>
               <p className="conversion-note">Monthly conversion rates. Relative changes are rounded. These are month-to-month observations, rather than isolated A/B test effect estimates.</p>
@@ -70,7 +70,7 @@ export default function RegistrationConversion() {
           </div>
           <StoryOutro
             heading="A decision is only as good as the number behind it"
-            lead="Every change here was settled by a number nobody argued about. That is not the normal case — in most companies the same question returns two different answers, and the experiment never gets resolved. Fixing that is the part I usually get called in for."
+            lead="These are month-to-month movements, not isolated experiment effects, and the page says so — the distinction is half the job. But even reading them this way needs a conversion rate that means one thing company-wide. In most companies the same question returns two different answers, so no change is ever credited or ruled out. Fixing that is the part I usually get called in for."
             nextTitle="Tripling Self-Service, and Keeping the Call Anyway"
             nextSlug="self-service-onboarding"
           />

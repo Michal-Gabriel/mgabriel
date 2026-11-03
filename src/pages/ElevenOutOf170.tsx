@@ -45,8 +45,8 @@ export default function ElevenOutOf170() {
 
             <h2>How to tell whether the data got better</h2>
             <p>The trouble with a gold layer is that it produces nothing you can see. No new screen, no new feature — just the same questions, answered more reliably. So it had to be weighed.</p>
-            <p>So we collected 21 business questions we already knew the correct answers to. The AI got each one twice: once on the old architecture, once on the new. Then we counted the hits.</p>
-            <Result before="33%" after="70%" label="Correct answers" detail="Across 21 test questions, old architecture against new" />
+            <p>So we fixed an evaluation set of business questions we already knew the correct answers to. The AI got each one twice: once on the old architecture, once on the new. Then we counted the hits.</p>
+            <Result before="33%" after="70%" label="Correct answers" detail="A fixed evaluation set of business questions, old architecture against new" />
             <p>From one third to seven tenths. Twice as many questions the system answers the way it should — same AI, same questions, different data underneath.</p>
 
             <h2>Then we opened the doors</h2>
@@ -59,7 +59,7 @@ export default function ElevenOutOf170() {
           </div>
           <StoryOutro
             heading="The same test, on your data"
-            lead="The 21 questions weren't special — they were the ones the company already asked itself. Running them against your data takes about four weeks, and the score tells you whether any of this applies to you."
+            lead="The questions weren't special — they were the ones the company already asked itself. Running them against your data takes about four weeks, and the score tells you whether any of this applies to you."
             nextTitle="Doubling Registration Conversion"
             nextSlug="doubling-registration-conversion"
           />

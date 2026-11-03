@@ -77,7 +77,7 @@ export default function AutomatingCustomerSuccess() {
             <Result before="~400" after="~1,900" label="Doctors converted each month" detail="Customer Success against the product — a third of the conversion rate, fifteen times the reach" />
 
             <h2>What that bought</h2>
-            <p>Hints took over the simple interventions and Customer Success stopped doing them — roughly <strong>€1M</strong> of departmental workload. Eleven times as many calendars were switched on through the product as through calls, and the bookings that followed those calendars outnumbered the CS-driven ones by a factor of 46.</p>
+            <p>Hints took over the simple interventions and Customer Success stopped doing them — roughly <strong>€1M</strong> of departmental workload. Nearly nine times as many calendars were switched on through the product as through calls, and the bookings that followed those calendars outnumbered the CS-driven ones by a factor of 46.</p>
             <p>Two findings mattered more to me than the headline ratios.</p>
             <p>The first is that the product reached doctors the team never would have. Over <strong>8,000</strong> doctors in the lowest two engagement grades were touched by hints, against 2,500 the team could meet — and 2,694 of them improved their grade. Agents triage toward the accounts worth their time, which is rational and which leaves the long tail untouched forever.</p>
             <p>The second is that it changed the rhythm. The share of doctors making more than one improvement rose from 11% to 18% over six months, and their number doubled. A call is an event. A hint on a Monday morning is a habit.</p>
