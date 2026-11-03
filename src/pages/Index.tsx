@@ -322,16 +322,16 @@ function ProofBar() {
 function Hero() {
   return (
     <section
-      className="flex flex-col justify-center px-6 pt-32 pb-9 md:px-16 md:pt-40 md:pb-16 lg:px-32 max-w-5xl mx-auto"
+      className="flex flex-col justify-center px-6 pt-36 pb-14 md:px-16 md:pt-48 md:pb-24 lg:px-32 max-w-6xl mx-auto"
     >
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="label text-teal mb-8 flex items-center gap-4">
         <span className="inline-block w-10 h-px" style={{ backgroundColor: "hsl(var(--bronze) / 0.7)" }} aria-hidden="true" />
         Michał Gabriel · Fractional Head of Data
       </motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-3xl md:text-[2.9rem] lg:text-[3.2rem] text-slate-lightest mb-4" style={{ fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.025em" }}>
+      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-[2.35rem] md:text-[3.5rem] lg:text-[4rem] text-slate-lightest mb-5" style={{ fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.025em" }}>
         Ask the same question twice. Get two different answers.
       </motion.h1>
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-xl md:text-[1.95rem] lg:text-[2.15rem] mb-10" style={{ color: "hsl(var(--text-muted))", fontWeight: 300, fontStyle: "italic", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-[1.45rem] md:text-[2.2rem] lg:text-[2.5rem] mb-12" style={{ color: "hsl(var(--text-muted))", fontWeight: 300, fontStyle: "italic", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
         Until that stops, every decision is a guess with a chart attached.
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="text-base md:text-lg max-w-2xl mb-2" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
@@ -341,22 +341,6 @@ function Hero() {
       <ProofBar />
 
 
-      {/* Social sidebar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="hidden md:flex fixed left-8 bottom-0 flex-col items-center gap-5 after:block after:w-px after:h-24 after:mt-5"
-        style={{ "--tw-after-bg": "hsl(var(--slate))", color: "hsl(var(--slate))" } as React.CSSProperties}
-      >
-        <div className="flex flex-col gap-5 items-center">
-          <a href="https://www.linkedin.com/in/mkgabriel" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
-            <IconLinkedIn />
-          </a>
-        </div>
-        <div className="w-px h-24 mt-2" style={{ backgroundColor: "hsl(var(--slate))" }} />
-      </motion.div>
-
     </section>
   );
 }
@@ -365,7 +349,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="about" className="py-14 md:py-24 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">1.</span> About Me
@@ -414,8 +398,8 @@ function About() {
               style={{ zIndex: 0, border: "1px solid hsl(var(--bronze) / 0.65)", borderRadius: "1px" }}
             />
             <div
-              className="relative w-full h-full overflow-hidden"
-              style={{ zIndex: 1, backgroundColor: "hsl(var(--surface-raised))", borderRadius: "1px", boxShadow: "0 36px 70px -48px hsl(30 25% 35% / 0.5)" }}
+              className="portrait-mat relative w-full h-full overflow-hidden"
+              style={{ zIndex: 1, borderRadius: "1px", boxShadow: "0 36px 70px -48px hsl(30 25% 35% / 0.5)" }}
             >
               <picture>
                 <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}profile-512.webp`} />
@@ -468,7 +452,7 @@ function Experience() {
   };
 
   return (
-    <section id="experience" className="py-9 md:py-16 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="experience" className="py-14 md:py-24 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">3.</span> Where I've Worked
@@ -570,7 +554,7 @@ const STORIES = [
 
 function SuccessStories() {
   return (
-    <section id="success-stories" className="py-9 md:py-16 pb-16 md:pb-[5.75rem] px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="success-stories" className="py-14 md:py-24 pb-20 md:pb-28 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">2.</span> Success Stories
@@ -607,23 +591,19 @@ function SuccessStories() {
 
 function Contact() {
   return (
-    <section id="contact" className="pt-9 md:pt-16 pb-20 md:pb-28 px-6 md:px-16 lg:px-32 max-w-5xl mx-auto">
+    <section id="contact" className="pt-14 md:pt-24 pb-24 md:pb-36 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
           <span className="section-number">4.</span> What's Next?
         </h2>
-        <h3 className="font-display text-4xl md:text-5xl mb-8 max-w-2xl" style={{ color: "hsl(var(--text-strong))", fontWeight: 400, letterSpacing: "-0.025em" }}>
-          Get In Touch
-        </h3>
         <p className="mb-12 max-w-2xl" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
           Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn px-10 py-4">
+        <div className="contact-actions">
+          <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn">
             Say Hello
           </a>
-          {/* .ghost-btn sits outside @layer, so its padding beats a utility — match the primary inline. */}
-          <a href={`${import.meta.env.BASE_URL}michal-gabriel-cv.pdf`} target="_blank" rel="noopener noreferrer nofollow" className="ghost-btn" style={{ padding: "1rem 2.5rem" }}>
+          <a href={`${import.meta.env.BASE_URL}michal-gabriel-cv.pdf`} target="_blank" rel="noopener noreferrer nofollow" className="ghost-btn">
             Download CV
           </a>
         </div>
