@@ -420,26 +420,19 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
 .story-preview-body { max-width: 42rem; }
 .story-preview-body p { margin: 0 0 1.25rem; font-weight: 300; line-height: 1.9; }
 
-/* A mounted plate: one generous paper mat, one hairline, one soft shadow.
-   The offset outline that used to sit behind it was a second frame doing a
-   different job, and two frames read as decoration rather than as mounting. */
-.portrait-mat {
-  padding: clamp(0.85rem, 2vw, 1.4rem);
-  background: hsl(42 46% 97.5%);
-  border: 1px solid hsl(var(--rule));
-  border-radius: 1px;
-  box-shadow: 0 2px 2px -1px hsl(30 25% 35% / 0.06), 0 30px 60px -40px hsl(30 25% 35% / 0.45);
-  transition: box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.portrait:hover .portrait-mat {
-  box-shadow: 0 2px 2px -1px hsl(30 25% 35% / 0.06), 0 44px 80px -40px hsl(30 25% 35% / 0.5);
-}
+/* No frame at all. Every mounting tried here — the offset outline, the paper
+   mat — read as decoration around a photograph rather than as part of it.
+   A circle has no corners to dress, so there is nothing left to get wrong. */
 .portrait-plate {
   display: block;
   aspect-ratio: 1;
-  /* The mat is lighter than the paper, so the plate needs its own edge to
-     stop the lighter corners of the photograph dissolving into it. */
-  box-shadow: 0 0 0 1px hsl(34 16% 78%);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 34px 56px -38px hsl(30 25% 35% / 0.65);
+  transition: box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.portrait:hover .portrait-plate {
+  box-shadow: 0 44px 72px -38px hsl(30 25% 35% / 0.72);
 }
 
 /* ── Hero proof bar ─────────────────────────────────────────────────────────── */

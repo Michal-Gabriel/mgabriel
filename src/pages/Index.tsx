@@ -392,9 +392,8 @@ function About() {
 
         {/* Profile image */}
         <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end md:pt-2">
-          <div className="portrait w-60 md:w-full md:max-w-[19rem] group">
-            <div className="portrait-mat">
-              <picture>
+          <div className="portrait w-60 md:w-full md:max-w-[19rem]">
+            <picture>
                 <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}profile-512.webp`} />
               <img
                 src={`${import.meta.env.BASE_URL}profile-512.jpg`}
@@ -403,10 +402,9 @@ function About() {
                 alt="Michał Gabriel"
                 width={256}
                 height={256}
-                className="portrait-plate w-full object-cover"
+                className="portrait-plate w-full"
               />
-              </picture>
-            </div>
+            </picture>
           </div>
         </FadeIn>
       </div>
