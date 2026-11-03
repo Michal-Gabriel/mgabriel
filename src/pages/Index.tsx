@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { motion, AnimatePresence, animate, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 
 /* The imperative helpers below sit outside MotionConfig, so they have to ask
@@ -9,6 +9,8 @@ const prefersReducedMotion = () =>
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
+
+const ConversionPath = lazy(() => import("@/components/ConversionPath"));
 
 const NAV_ITEMS = [
   { label: "About",           num: "1", href: "#about" },
@@ -650,6 +652,9 @@ function SuccessStories() {
                 <div className="story-preview-body">
                   <p className="text-slate-light">{story.lead}</p>
                   <p className="text-slate-lightest">{story.hook}</p>
+                  {story.slug === "doubling-registration-conversion" && (
+                    <Suspense fallback={null}><ConversionPath /></Suspense>
+                  )}
                   <a className="read-link" href={`${import.meta.env.BASE_URL}success-stories/${story.slug}/`}>
                     Read the full story <span aria-hidden="true">→</span>
                   </a>
