@@ -420,21 +420,10 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
 .story-preview-body { max-width: 42rem; }
 .story-preview-body p { margin: 0 0 1.25rem; font-weight: 300; line-height: 1.9; }
 
-/* No frame at all. Every mounting tried here — the offset outline, the paper
-   mat, the hairline — read as decoration arranged around a photograph. The
-   square answers the right angles the rest of the page is built on; the
-   shadow is the only thing holding it off the paper. */
-.portrait-plate {
-  display: block;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 1px;
-  box-shadow: 0 34px 56px -38px hsl(30 25% 35% / 0.65);
-  transition: box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+.portrait img {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.portrait:hover .portrait-plate {
-  box-shadow: 0 44px 72px -38px hsl(30 25% 35% / 0.72);
-}
+.portrait:hover img { transform: scale(1.02); }
 
 /* ── Hero proof bar ─────────────────────────────────────────────────────────── */
 
