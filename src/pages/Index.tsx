@@ -461,7 +461,7 @@ function Experience() {
 
       <FadeIn delay={0.1} className="flex flex-col sm:flex-row gap-0">
         {/* Tab list */}
-        <div role="tablist" aria-label="Companies" aria-orientation={verticalTabs ? "vertical" : "horizontal"} onKeyDown={onTabKeyDown} className="flex sm:flex-col overflow-x-auto sm:overflow-x-visible sm:min-w-[150px] border-b sm:border-b-0 sm:border-l-0" style={{ borderColor: "hsl(var(--navy-lighter))" }}>
+        <div role="tablist" aria-label="Companies" aria-orientation={verticalTabs ? "vertical" : "horizontal"} onKeyDown={onTabKeyDown} className="flex flex-wrap sm:flex-nowrap sm:flex-col sm:min-w-[150px] border-b sm:border-b-0 sm:border-l-0" style={{ borderColor: "hsl(var(--navy-lighter))" }}>
           {JOBS.map((j, i) => (
             <button
               key={j.company}
