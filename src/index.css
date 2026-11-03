@@ -421,13 +421,14 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
 .story-preview-body p { margin: 0 0 1.25rem; font-weight: 300; line-height: 1.9; }
 
 /* No frame at all. Every mounting tried here — the offset outline, the paper
-   mat — read as decoration around a photograph rather than as part of it.
-   A circle has no corners to dress, so there is nothing left to get wrong. */
+   mat, the hairline — read as decoration arranged around a photograph. The
+   square answers the right angles the rest of the page is built on; the
+   shadow is the only thing holding it off the paper. */
 .portrait-plate {
   display: block;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 1px;
   box-shadow: 0 34px 56px -38px hsl(30 25% 35% / 0.65);
   transition: box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
