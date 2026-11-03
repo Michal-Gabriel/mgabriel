@@ -618,9 +618,13 @@ function Contact() {
         <p className="mb-12 max-w-2xl" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
           Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
         </p>
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center gap-4">
           <a href="https://www.linkedin.com/in/mkgabriel/" target="_blank" rel="noopener noreferrer" className="teal-btn px-10 py-4">
             Say Hello
+          </a>
+          {/* .ghost-btn sits outside @layer, so its padding beats a utility — match the primary inline. */}
+          <a href={`${import.meta.env.BASE_URL}michal-gabriel-cv.pdf`} target="_blank" rel="noopener noreferrer" className="ghost-btn" style={{ padding: "1rem 2.5rem" }}>
+            Download CV
           </a>
         </div>
       </FadeIn>
