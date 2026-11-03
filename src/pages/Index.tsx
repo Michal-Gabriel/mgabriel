@@ -623,7 +623,7 @@ function Contact() {
             Say Hello
           </a>
           {/* .ghost-btn sits outside @layer, so its padding beats a utility — match the primary inline. */}
-          <a href={`${import.meta.env.BASE_URL}michal-gabriel-cv.pdf`} target="_blank" rel="noopener noreferrer" className="ghost-btn" style={{ padding: "1rem 2.5rem" }}>
+          <a href={`${import.meta.env.BASE_URL}michal-gabriel-cv.pdf`} target="_blank" rel="noopener noreferrer nofollow" className="ghost-btn" style={{ padding: "1rem 2.5rem" }}>
             Download CV
           </a>
         </div>

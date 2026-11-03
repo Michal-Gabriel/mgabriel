@@ -1,3 +1,7 @@
+# Inert. A crawler only ever fetches /robots.txt from the origin root, and this
+# file is published under /mgabriel/. The one that governs this site lives in
+# the Michal-Gabriel/michal-gabriel.github.io repository — edit it there.
+
 User-agent: Googlebot
 Allow: /
 
