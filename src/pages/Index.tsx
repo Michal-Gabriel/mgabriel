@@ -408,7 +408,7 @@ function About() {
 
         {/* Profile image */}
         <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end md:pt-2">
-          <div className="portrait relative w-60 h-72 md:w-full md:max-w-[19rem] md:h-auto md:aspect-[3/4] group">
+          <div className="portrait relative w-60 h-60 md:w-full md:max-w-[19rem] md:h-auto md:aspect-square group">
             <div
               className="absolute inset-0 translate-x-5 translate-y-5 transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3"
               style={{ zIndex: 0, border: "1px solid hsl(var(--bronze) / 0.65)", borderRadius: "1px" }}
