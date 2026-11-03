@@ -392,15 +392,8 @@ function About() {
 
         {/* Profile image */}
         <FadeIn delay={0.3} className="md:col-span-2 flex justify-center md:justify-end md:pt-2">
-          <div className="portrait relative w-60 h-60 md:w-full md:max-w-[19rem] md:h-auto md:aspect-square group">
-            <div
-              className="absolute inset-0 translate-x-5 translate-y-5 transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3"
-              style={{ zIndex: 0, border: "1px solid hsl(var(--bronze) / 0.65)", borderRadius: "1px" }}
-            />
-            <div
-              className="portrait-mat relative w-full h-full overflow-hidden"
-              style={{ zIndex: 1, borderRadius: "1px", boxShadow: "0 36px 70px -48px hsl(30 25% 35% / 0.5)" }}
-            >
+          <div className="portrait w-60 md:w-full md:max-w-[19rem] group">
+            <div className="portrait-mat">
               <picture>
                 <source type="image/webp" srcSet={`${import.meta.env.BASE_URL}profile-512.webp`} />
               <img
@@ -410,7 +403,7 @@ function About() {
                 alt="Michał Gabriel"
                 width={256}
                 height={256}
-                className="w-full h-full object-cover"
+                className="portrait-plate w-full object-cover"
               />
               </picture>
             </div>

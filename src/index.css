@@ -420,14 +420,27 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
 .story-preview-body { max-width: 42rem; }
 .story-preview-body p { margin: 0 0 1.25rem; font-weight: 300; line-height: 1.9; }
 
+/* A mounted plate: one generous paper mat, one hairline, one soft shadow.
+   The offset outline that used to sit behind it was a second frame doing a
+   different job, and two frames read as decoration rather than as mounting. */
 .portrait-mat {
-  padding: clamp(0.6rem, 1.6vw, 0.95rem);
-  background: hsl(42 44% 97%);
+  padding: clamp(0.85rem, 2vw, 1.4rem);
+  background: hsl(42 46% 97.5%);
+  border: 1px solid hsl(var(--rule));
+  border-radius: 1px;
+  box-shadow: 0 2px 2px -1px hsl(30 25% 35% / 0.06), 0 30px 60px -40px hsl(30 25% 35% / 0.45);
+  transition: box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.portrait img {
-  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+.portrait:hover .portrait-mat {
+  box-shadow: 0 2px 2px -1px hsl(30 25% 35% / 0.06), 0 44px 80px -40px hsl(30 25% 35% / 0.5);
 }
-.portrait:hover img { transform: scale(1.02); }
+.portrait-plate {
+  display: block;
+  aspect-ratio: 1;
+  /* The mat is lighter than the paper, so the plate needs its own edge to
+     stop the lighter corners of the photograph dissolving into it. */
+  box-shadow: 0 0 0 1px hsl(34 16% 78%);
+}
 
 /* ── Hero proof bar ─────────────────────────────────────────────────────────── */
 
