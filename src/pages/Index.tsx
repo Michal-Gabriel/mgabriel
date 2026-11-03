@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate, useInView, useScroll, useSpring, useTransform } from "framer-motion";
+
+/* The imperative helpers below sit outside MotionConfig, so they have to ask
+   about reduced motion themselves. */
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -158,6 +165,76 @@ function AnimatedItem({ children, delay = 0, className = "" }: { children: React
   );
 }
 
+/* Each word rises out from behind its own mask. The mask is padded below and
+   pulled back by the same amount so descenders are not clipped. */
+function RevealWords({ text, delay = 0, className, style }: { text: string; delay?: number; className?: string; style?: React.CSSProperties }) {
+  return (
+    <span className={className} style={style}>
+      {text.split(" ").map((word, i) => (
+        <span key={`${word}-${i}`} className="reveal-mask">
+          <motion.span
+            className="reveal-word"
+            initial={{ y: "115%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1.25, delay: delay + i * 0.05, ease: EASE }}
+          >
+            {word}
+          </motion.span>
+        </span>
+      )).reduce<React.ReactNode[]>((out, node, i) => (i ? [...out, " ", node] : [node]), [])}
+    </span>
+  );
+}
+
+/* The figure counts up the first time it is seen. It renders its final value
+   on the server-less first paint and whenever motion is turned down, so the
+   number is never missing. */
+function CountUp({ value }: { value: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const suffix = value.replace(/[\d.]+/, "");
+  const target = parseFloat(value);
+  const [shown, setShown] = useState(value);
+
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    setShown(`0${suffix}`);
+  }, [suffix]);
+
+  useEffect(() => {
+    if (!inView || prefersReducedMotion()) return;
+    const controls = animate(0, target, {
+      duration: 1.7,
+      ease: EASE,
+      onUpdate: (v) => setShown(`${Math.round(v)}${suffix}`),
+    });
+    return () => controls.stop();
+  }, [inView, target, suffix]);
+
+  return <span ref={ref}>{shown}</span>;
+}
+
+/* A bronze hairline across the top that fills as the page is read. */
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 110, damping: 30, mass: 0.5 });
+  return <motion.div className="scroll-progress" style={{ scaleX }} aria-hidden="true" />;
+}
+
+/* The rule beside a section heading draws itself when the section arrives. */
+function HeadingRule() {
+  return (
+    <motion.span
+      className="heading-rule"
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 1.5, delay: 0.15, ease: EASE }}
+      aria-hidden="true"
+    />
+  );
+}
+
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div
@@ -310,7 +387,7 @@ function ProofBar() {
           <dt className="proof-pair">
             <span className="proof-before">{p.before}</span>
             <span className="proof-arrow" aria-hidden="true">→</span>
-            <span className="proof-after">{p.after}</span>
+            <span className="proof-after"><CountUp value={p.after} /></span>
           </dt>
           <dd className="proof-label">{p.label}</dd>
         </div>
@@ -328,11 +405,11 @@ function Hero() {
         <span className="inline-block w-10 h-px" style={{ backgroundColor: "hsl(var(--bronze) / 0.7)" }} aria-hidden="true" />
         Michał Gabriel · Fractional Head of Data
       </motion.p>
-      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-[2.35rem] md:text-[3.5rem] lg:text-[4rem] text-slate-lightest mb-5" style={{ fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.025em" }}>
-        Ask the same question twice. Get two different answers.
+      <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25, duration: 0.5 }} className="font-display text-[2.35rem] md:text-[3.5rem] lg:text-[4rem] text-slate-lightest mb-5" style={{ fontWeight: 400, lineHeight: 1.02, letterSpacing: "-0.025em" }}>
+        <RevealWords text="Ask the same question twice. Get two different answers." delay={0.3} />
       </motion.h1>
-      <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="font-display text-[1.45rem] md:text-[2.2rem] lg:text-[2.5rem] mb-12" style={{ color: "hsl(var(--text-muted))", fontWeight: 300, fontStyle: "italic", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-        Until that stops, every decision is a guess with a chart attached.
+      <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55, duration: 0.5 }} className="font-display text-[1.45rem] md:text-[2.2rem] lg:text-[2.5rem] mb-12" style={{ color: "hsl(var(--text-muted))", fontWeight: 300, fontStyle: "italic", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+        <RevealWords text="Until that stops, every decision is a guess with a chart attached." delay={0.62} />
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="text-base md:text-lg max-w-2xl mb-2" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
         I rebuild what sits under the reports, so one figure means one thing across the company — then prove it, by putting the same questions to the same AI before and after. At edrone:
@@ -352,7 +429,7 @@ function About() {
     <section id="about" className="py-14 md:py-24 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">1.</span> About Me
+          <span className="section-number">1.</span> About Me<HeadingRule />
         </h2>
       </FadeIn>
 
@@ -455,7 +532,7 @@ function Experience() {
     <section id="experience" className="py-14 md:py-24 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">3.</span> Where I've Worked
+          <span className="section-number">3.</span> Where I've Worked<HeadingRule />
         </h2>
       </FadeIn>
 
@@ -557,7 +634,7 @@ function SuccessStories() {
     <section id="success-stories" className="py-14 md:py-24 pb-20 md:pb-28 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">2.</span> Success Stories
+          <span className="section-number">2.</span> Success Stories<HeadingRule />
         </h2>
         <div className="success-stories-grid">
           {STORIES.map((story, i) => (
@@ -594,7 +671,7 @@ function Contact() {
     <section id="contact" className="pt-14 md:pt-24 pb-24 md:pb-36 px-6 md:px-16 lg:px-32 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="numbered-heading">
-          <span className="section-number">4.</span> What's Next?
+          <span className="section-number">4.</span> What's Next?<HeadingRule />
         </h2>
         <p className="mb-12 max-w-2xl" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
           Tell me the number your company argues about most — the one that comes back different depending on who you ask. Thirty minutes is usually enough to tell whether I can help, and I'll say so either way.
@@ -634,6 +711,7 @@ export default function Index() {
 
   return (
     <div style={{ backgroundColor: "hsl(var(--navy))" }} className="min-h-screen">
+      <ScrollProgress />
       <Navbar />
       <main id="content">
         <Hero />

@@ -206,12 +206,12 @@
 
   /* An empty flex child baselines on its bottom edge, so the rule lands
      exactly on the heading's baseline. */
-  .numbered-heading::after {
-    content: '';
+  .heading-rule {
     display: block;
     height: 1px;
     width: 100%;
     margin-left: 2rem;
+    transform-origin: left center;
     background: linear-gradient(90deg, hsl(var(--bronze) / 0.45), hsl(var(--rule)) 45%, transparent);
   }
 
@@ -549,3 +549,35 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 .contact-actions .teal-btn,
 .contact-actions .ghost-btn { padding: 1.05rem 2.75rem; font-size: 0.7rem; }
+
+/* ── Motion ─────────────────────────────────────────────────────────────────── */
+
+/* A word rises out from behind this mask. The padding below and the equal
+   negative margin give descenders room the mask would otherwise cut off. */
+.reveal-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.reveal-word { display: inline-block; will-change: transform; }
+
+/* Reading progress, drawn over the static hairline at the top of the page. */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 61;
+  transform-origin: left center;
+  background: linear-gradient(90deg, hsl(var(--bronze) / 0.85), hsl(var(--bronze-soft)));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-word { transform: none !important; }
+  .heading-rule { transform: none !important; }
+  .scroll-progress { display: none; }
+}
