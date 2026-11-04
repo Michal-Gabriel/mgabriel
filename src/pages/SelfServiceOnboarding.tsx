@@ -1,3 +1,4 @@
+import OnboardingGap from "@/components/OnboardingGap";
 import StoryOutro from "@/components/StoryOutro";
 
 function Result({ before, after, label, detail }: { before: string; after: string; label: string; detail: string }) {
@@ -46,6 +47,9 @@ export default function SelfServiceOnboarding() {
             <h2>And the bar was still missed</h2>
             <p>54% is not 70%. But the more interesting number wasn't the completion rate at all.</p>
             <p>Profile completion in the self-service group was only 10% below the control — setup, essentially, took care of itself. The onboarding score, which also weighs whether a doctor actually started using the product and getting results, told a different story: the share of doctors reaching an A or B onboarding grade was <strong>19 percentage points lower</strong>. Broken down, setup and adoption points were each about 20% lower, while advanced-usage scores were flat.</p>
+
+            <OnboardingGap />
+
             <blockquote>Self-service covered the configuration. It did not cover the adoption — and adoption is what onboarding is for.</blockquote>
             <p>So the recommendation was not to cut the meeting. It was to stop building more setup tooling, which doctors evidently manage on their own, and to point the roadmap at the half the product couldn't yet carry: getting a doctor to actually use what they just configured.</p>
 

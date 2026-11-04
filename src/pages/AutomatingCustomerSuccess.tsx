@@ -1,11 +1,5 @@
+import ReachAndRate from "@/components/ReachAndRate";
 import StoryOutro from "@/components/StoryOutro";
-
-const COMPARISON = [
-  { metric: "Doctors reached each month", product: "15,200", cs: "1,000" },
-  { metric: "Doctors converted each month", product: "1,900", cs: "400" },
-  { metric: "Conversion rate", product: "12%", cs: "38%" },
-  { metric: "Calendars activated on the marketplace", product: "883", cs: "101" },
-];
 
 function Result({ before, after, label, detail }: { before: string; after: string; label: string; detail: string }) {
   return (
@@ -51,28 +45,7 @@ export default function AutomatingCustomerSuccess() {
             <p>The first readout looked like a loss. A hint converted 12% of the doctors who saw it. A Customer Success call converted 38%. On that number, the product was three times worse than a person, and the obvious conclusion was that automation wasn't up to the job.</p>
             <p>But conversion rate is the wrong denominator for a channel whose entire advantage is reach. A call converts well because it only ever happens to a doctor an agent chose to phone. A hint reaches everyone eligible. Measured on the thing the business actually gets — doctors who did the improvement — the picture inverts.</p>
 
-            <figure className="eval-sample">
-              <figcaption className="eval-sample-head">Product against Customer Success, per month</figcaption>
-              <table className="eval-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Measure</th>
-                    <th scope="col">Product</th>
-                    <th scope="col">CS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.metric}>
-                      <th scope="row">{row.metric}</th>
-                      <td className="eval-yes">{row.product}</td>
-                      <td>{row.cs}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="eval-note">Monthly averages across Brazil, Mexico, Italy, Spain and Poland, first half of 2024, rounded. Reached means a hint was displayed or a CS meeting was held; converted means the doctor performed at least one of the proposed improvements.</p>
-            </figure>
+            <ReachAndRate />
 
             <Result before="~400" after="~1,900" label="Doctors converted each month" detail="Customer Success against the product — a third of the conversion rate, fifteen times the reach" />
 

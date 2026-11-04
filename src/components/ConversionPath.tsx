@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useStill } from "@/lib/useStill";
 
 /* The real series from the story page — four months, each with the one change
    that shipped that month. Nothing between these points was measured, so
@@ -33,15 +34,7 @@ const last = POINTS.length - 1;
 
 export default function ConversionPath() {
   const [active, setActive] = useState<number | null>(null);
-  const [still, setStill] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setStill(query.matches);
-    sync();
-    query.addEventListener("change", sync);
-    return () => query.removeEventListener("change", sync);
-  }, []);
+  const still = useStill();
 
   const shown = active === null ? null : POINTS[active];
 
