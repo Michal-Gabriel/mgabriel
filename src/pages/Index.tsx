@@ -21,7 +21,7 @@ const NAV_ITEMS = [
 
 const PROOF = [
   { before: "33%", after: "70%", label: "Business questions answered correctly" },
-  { before: "11",  after: "103", label: "People using data each month, out of 170" },
+  { before: "11",  after: "103", label: "People looking up data each month, out of 170" },
 ];
 
 const SKILLS = [
