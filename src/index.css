@@ -829,3 +829,6 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
   white-space: nowrap;
   color: hsl(var(--bronze));
 }
+
+/* The hero's proof numbers point at the story they came from. */
+.proof-link { margin-top: 1.25rem; }

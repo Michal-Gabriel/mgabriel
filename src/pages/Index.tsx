@@ -364,6 +364,7 @@ function Navbar() {
 
 function ProofBar() {
   return (
+    <>
     <motion.dl
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -381,6 +382,18 @@ function ProofBar() {
         </div>
       ))}
     </motion.dl>
+    {/* Both numbers come from the same project, so one link carries them. */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.35, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      className="proof-link"
+    >
+      <a className="read-link" href={`${import.meta.env.BASE_URL}success-stories/eleven-out-of-170/`}>
+        Read the full story <span aria-hidden="true">&rarr;</span>
+      </a>
+    </motion.div>
+    </>
   );
 }
 
