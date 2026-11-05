@@ -126,20 +126,6 @@ const JOBS = [
       },
     ],
   },
-  {
-    company: "Rava Consulting",
-    url: "#",
-    roles: [
-      {
-        title: "Co-Founder",
-        period: "Sep 2018 – Aug 2020",
-        bullets: [
-          "Co-founded a market research outfit connecting university and business — the Junior Enterprise model.",
-          "Ran projects end to end and managed a team of 10.",
-        ],
-      },
-    ],
-  },
 ];
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
