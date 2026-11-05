@@ -71,8 +71,8 @@ export default function RegistrationConversion() {
           <StoryOutro
             heading="A decision is only as good as the number behind it"
             lead="These are month-to-month movements, not isolated experiment effects, and the page says so — the distinction is half the job. But even reading them this way needs a conversion rate that means one thing company-wide. In most companies the same question returns two different answers, so no change is ever credited or ruled out. Fixing that is the part I usually get called in for."
-            nextTitle="Tripling Self-Service, and Keeping the Call Anyway"
-            nextSlug="self-service-onboarding"
+            nextTitle="Fifteen Times the Reach of a Phone Call"
+            nextSlug="automating-customer-success"
           />
           <footer className="story-footer"><p className="story-eyebrow">edrone · product-led growth</p><a href={`${home}#success-stories`} className="inline-link">← Back to success stories</a></footer>
         </article>

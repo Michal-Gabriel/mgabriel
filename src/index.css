@@ -752,37 +752,6 @@ a:focus-visible { outline: 1px solid hsl(var(--bronze)); outline-offset: 5px; }
   color: hsl(var(--text-muted));
 }
 
-/* Difference from the control group: zero is the reference, drawn. */
-.fig-frame .gap-track { height: 1.1rem; }
-.gap-zero {
-  position: absolute;
-  right: 0;
-  top: -0.2rem;
-  bottom: -0.2rem;
-  width: 1px;
-  background: hsl(var(--bronze) / 0.55);
-}
-.gap-mark {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  height: 2px;
-  background: hsl(var(--bronze));
-  transform: translateY(-50%);
-}
-.gap-dot {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: hsl(var(--bronze));
-  /* A surface ring, so the dot stays legible where it meets the zero rule. */
-  box-shadow: 0 0 0 2px hsl(var(--surface-raised));
-  transform: translate(-50%, -50%);
-}
-
 /* Reach against conversion rate: two measures, two plots, never one axis. */
 .fig-frame .rr-legend {
   display: flex;

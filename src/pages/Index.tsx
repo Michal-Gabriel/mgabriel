@@ -615,13 +615,6 @@ const STORIES = [
     slug: "doubling-registration-conversion",
   },
   {
-    eyebrow: "Docplanner · Activation",
-    title: "Tripling Self-Service, and Keeping the Call Anyway",
-    lead: "Doctors completed the setup three times more often when no one was coming to help them. From 16% to 54%, by removing something rather than building something.",
-    hook: "The hypothesis held and the bar was still missed. What the product couldn't take over turned out to be the more useful finding.",
-    slug: "self-service-onboarding",
-  },
-  {
     eyebrow: "Docplanner · Product automation",
     title: "Fifteen Times the Reach of a Phone Call",
     lead: "A third of the conversion rate of a human being, fifteen times the reach — and five times the result. Around €1M of customer success work the product took over.",

@@ -21,7 +21,7 @@ export default function AutomatingCustomerSuccess() {
       <main className="story-main">
         <article>
           <header className="story-header">
-            <p className="story-eyebrow">Success story / 04</p>
+            <p className="story-eyebrow">Success story / 03</p>
             <h1>Fifteen Times the Reach of a Phone Call</h1>
             <p className="story-deck">What a product could take over from a customer success team — and the part it could not.</p>
             <p className="story-eyebrow">Docplanner · Product automation</p>
