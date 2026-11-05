@@ -400,7 +400,7 @@ function Hero() {
         <RevealWords text="Until that stops, every decision is a guess with a chart attached." delay={0.62} />
       </motion.h2>
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1.1, ease: [0.16, 1, 0.3, 1] }} className="text-base md:text-lg max-w-2xl mb-2" style={{ color: "hsl(var(--text))", fontWeight: 300, lineHeight: 1.9 }}>
-        I rebuild the data underneath the reports, so the same question gets the same answer — whether you ask a person or the AI. Once the numbers hold, the rest of the company starts using them. At edrone:
+        I rebuild the data, so the AI gives the same answer every time you ask it. That builds trust, and more people in the company start using data to make decisions. At edrone:
       </motion.p>
 
       <ProofBar />
