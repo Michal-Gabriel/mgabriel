@@ -27,35 +27,35 @@ export default function ElevenOutOf170() {
             <p className="story-eyebrow">edrone · Data quality</p>
           </header>
           <div className="story-body">
-            <p>When I joined edrone in January, reporting ran on Tableau. The tool worked — technically. It had dashboards, it had data, it had licences. And over an entire month, eleven people opened it.</p>
+            <p>When I joined edrone in January, reporting ran on Tableau. Dashboards, data, licences — all there. Over an entire month, eleven people opened it.</p>
             <p>Eleven, in a company of 170. A company that sells other companies a tool for making decisions based on data.</p>
-            <p>The reason wasn't a mystery. You only had to ask. Tableau was seen as unstable and hard to use, so people stopped trying. Instead they messaged someone on the data team and waited. Or — more often — didn't message anyone and guessed.</p>
+            <p>You only had to ask why. Tableau was seen as unstable and hard to use, so people stopped trying. They messaged the data team and waited — or didn't ask anyone and guessed.</p>
 
             <h2>The second problem was worse, because it was invisible</h2>
-            <p>Even when someone did reach a number, it wasn't clear whether it was <strong><em>the</em></strong> number. The same question, asked twice in two places, could come back with two different answers — depending on which table happened to be open. There was no single place where a figure always meant the same thing.</p>
-            <p>This is the kind of problem that never reports itself. Nobody walks up and says “my data is wrong,” because how would they know. Trust in the numbers just erodes quietly, until instinct starts beating the report.</p>
-            <p>So we set two goals, in this order: <strong>fix the quality</strong>, then <strong>open up the access</strong>. Either one alone is useless. Access to bad data only spreads the error faster.</p>
+            <p>Even when someone reached a number, it wasn't clear whether it was <strong><em>the</em></strong> number. The same question, asked twice, came back with two answers depending on which table happened to be open.</p>
+            <p>Nobody reports this. Nobody walks up and says “my data is wrong” — how would they know. Trust just erodes, until instinct starts beating the report.</p>
+            <p>So, two goals, in this order: <strong>fix the quality</strong>, then <strong>open up the access</strong>. Access to bad data only spreads the error faster.</p>
 
             <h2>What “rebuilding the architecture” actually meant</h2>
-            <p>Here is how ten versions of the truth get made, and nobody is at fault. A developer builds a feature and needs somewhere to put the data, so they create a table. The feature changes, so they create another one. A fix goes out, an export is needed, someone backfills history — another table, and another. Six months later one feature is described by ten tables, each slightly different, none of them marked as the right one.</p>
-            <p>Then an analyst arrives with a question and picks one. Probably the one with the most convincing name. The next analyst picks a different one. Both get an answer, both believe it, and the numbers in the two reports don't match.</p>
-            <p>A gold layer is the answer to that. It's a thin, deliberate layer on top of everything developers produce: one table per business concept, defined once, owned by someone, and documented. Everything underneath it stays where it is — it just stops being what anyone reads. If a figure isn't in the gold layer, it isn't the figure.</p>
+            <p>Here is how ten versions of the truth get made, with nobody at fault. A developer needs somewhere to put data, so they create a table. The feature changes — another table. A fix, an export, a backfill — another, and another. Six months later one feature is described by ten tables, none of them marked as the right one.</p>
+            <p>An analyst arrives with a question and picks one. Probably the one with the most convincing name. The next analyst picks a different one. Both believe their answer, and the two reports don't match.</p>
+            <p>A gold layer is the answer: a thin, deliberate layer on top of everything developers produce. One table per business concept, defined once, owned, documented. Everything underneath stays where it is — it just stops being what anyone reads. If a figure isn't in the gold layer, it isn't the figure.</p>
 
             <DataArchitecture />
 
             <h2>How to tell whether the data got better</h2>
-            <p>The trouble with a gold layer is that it produces nothing you can see. No new screen, no new feature — just the same questions, answered more reliably. So it had to be weighed.</p>
-            <p>So we fixed an evaluation set of business questions we already knew the correct answers to. The AI got each one twice: once on the old architecture, once on the new. Then we counted the hits.</p>
+            <p>A gold layer produces nothing you can see. No new screen, no new feature — just the same questions, answered more reliably. So it had to be weighed.</p>
+            <p>We fixed a set of business questions we already knew the answers to. The AI got each one twice: once on the old architecture, once on the new. Then we counted the hits.</p>
             <Result before="33%" after="70%" label="Correct answers" detail="A fixed evaluation set of business questions, old architecture against new" />
-            <p>From one third to seven tenths. Twice as many questions the system answers the way it should — same AI, same questions, different data underneath.</p>
+            <p>From one third to seven tenths. Same AI, same questions — different data underneath.</p>
 
             <h2>Then we opened the doors</h2>
-            <p>At the end of January we moved off Tableau and onto Beyond, a tool we built ourselves. There are no licences to hand out and no learning curve to clear: it's open to anyone on the company VPN. And if you can't find the data you're after, you ask the AI in plain language.</p>
+            <p>At the end of January we moved off Tableau onto Beyond, a tool we built ourselves. No licences to hand out, no learning curve: open to anyone on the company VPN. And if you can't find what you're after, you ask the AI in plain language.</p>
             <p>That last part mattered more than we expected. The barrier was never access — the logins existed. It was that asking a question first required knowing how to ask it.</p>
             <Result before="11" after="103" label="Monthly active users" detail="Tableau in January against Beyond in April" />
-            <p>Nine times as many people actually going in for data in a given month. Not accounts — people. Out of 170 in the company, more than half now use it.</p>
+            <p>Nine times as many people going in for data in a given month. Not accounts — people. More than half the company.</p>
             <blockquote>People hadn't stopped using data because they didn't need it. They stopped because it was harder than guessing.</blockquote>
-            <p>Today a question about a number no longer routes through the data team. It routes through the person who needs the number — and comes back with an answer they can trust. That is the whole difference between data a company has and data a company uses.</p>
+            <p>Today a question about a number routes through the person who needs it, not the data team — and comes back with an answer they can trust. That is the whole difference between data a company has and data a company uses.</p>
           </div>
           <StoryOutro
             heading="The same test, on your data"

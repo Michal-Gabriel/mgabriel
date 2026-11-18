@@ -24,21 +24,21 @@ export default function RegistrationConversion() {
             <p className="story-eyebrow">edrone · Product-led growth</p>
           </header>
           <div className="story-body">
-            <p>In January, the registration conversion rate at edrone was 6.5%. By April, it was 13%. Over those four months, we changed what the registration flow asked people to do — and how it explained why they should do it.</p>
-            <p>The sequence matters. Removing a field was followed by a substantial increase. Two more changes barely moved the monthly rate. Then we added a value proposition, and the rate reached its highest point in the period.</p>
-            <p>The story is about two parts of the same decision: <strong>how much effort registration takes</strong>, and <strong>whether that effort feels worthwhile</strong>.</p>
+            <p>In January, registration conversion at edrone was 6.5%. By April it was 13%. In between, four changes — each one measured on its own.</p>
+            <p>The sequence is the point. Removing one field moved the rate sharply. Two more simplifications barely moved it at all. Then we explained why registering was worth it, and the rate hit its high.</p>
+            <p>Two halves of the same decision: <strong>how much effort registration takes</strong>, and <strong>whether that effort feels worthwhile</strong>.</p>
 
             <h2>First, ask for less</h2>
-            <p>January gave us the baseline: <strong>6.5%</strong>, with no changes. In February, we removed the URL field. The monthly conversion rate rose to <strong>8.8%</strong> — an increase of 2.3 percentage points, or roughly 35% relative to January.</p>
-            <p>A field looks small on a screen. But each one is another thing a person has to understand and complete before they can move forward. Removing the URL field reduced what we asked for at that first step.</p>
+            <p>January was the baseline: <strong>6.5%</strong>, nothing changed. In February we removed the URL field. Conversion rose to <strong>8.8%</strong> — 2.3 points, about 35% relative.</p>
+            <p>A field looks like nothing on a screen. It's one more thing to understand and fill in before anyone can move forward.</p>
 
             <h2>A simpler flow didn't explain the whole opportunity</h2>
-            <p>In March, we removed the phone field and split registration into two steps. The conversion rate reached <strong>9.0%</strong>, up from 8.8% — about 2% relative growth.</p>
-            <p>That was a much smaller movement than the month before. The monthly figures show that successive simplifications were not accompanied by equally large gains. They also leave an important product question: once the effort is lower, is the reason to register clear enough?</p>
+            <p>In March we dropped the phone field and split registration into two steps. Conversion reached <strong>9.0%</strong> — up 2% relative.</p>
+            <p>Far less than the month before. Simplifying again didn't buy another jump, which raised the real question: once the effort is low, is the reason to register clear?</p>
 
             <h2>Then, make the value clear</h2>
-            <p>In April, we added a value proposition to the registration experience. The monthly conversion rate rose to <strong>13.0%</strong>: four percentage points above March, or roughly 44% relative growth.</p>
-            <p>This was the largest month-to-month increase in the sequence. The flow now asked for less information and gave people a clearer reason to continue.</p>
+            <p>In April we added a value proposition to the flow. Conversion rose to <strong>13.0%</strong> — four points above March, about 44% relative, the biggest month-to-month move in the sequence.</p>
+            <p>The flow now asked for less and gave people a reason to continue.</p>
 
             <figure className="conversion-figure">
               <figcaption className="conversion-chart-title">Registration conversion — and what changed each month</figcaption>
@@ -64,13 +64,13 @@ export default function RegistrationConversion() {
               <div className="story-result-values"><span className="story-before">6.5%</span><span className="story-result-arrow" aria-hidden="true">→</span><span className="text-teal">13%</span></div>
               <figcaption><strong>Registration conversion doubled</strong><span>January → April · +6.5 percentage points · +100% relative increase</span></figcaption>
             </figure>
-            <p>At January's rate, 1,000 visitors would translate into 65 registrations. At April's rate, the same number would translate into 130. That is what doubling conversion means at the same traffic volume.</p>
+            <p>At January's rate, 1,000 visitors meant 65 registrations. At April's, 130. Same traffic.</p>
             <blockquote>Make it easier to register. Make it clearer why someone should.</blockquote>
-            <p>Registration is only the start of activation. In this part of the journey, the result was concrete: the monthly conversion rate doubled while we simplified the flow and strengthened its value proposition.</p>
+            <p>Registration is only the start of activation. But this part of the journey is concrete: the rate doubled while we cut the flow down and sharpened what it promised.</p>
           </div>
           <StoryOutro
             heading="A decision is only as good as the number behind it"
-            lead="These are month-to-month movements, not isolated experiment effects, and the page says so — the distinction is half the job. But even reading them this way needs a conversion rate that means one thing company-wide. In most companies the same question returns two different answers, so no change is ever credited or ruled out. Fixing that is the part I usually get called in for."
+            lead="These are month-to-month movements, not isolated experiment effects — and saying so is half the job. The other half is a conversion rate that means one thing company-wide. In most companies the same question returns two answers, so no change is ever credited or ruled out. That is the part I usually get called in for."
             nextTitle="Fifteen Times the Reach of a Phone Call"
             nextSlug="automating-customer-success"
           />
